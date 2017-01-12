@@ -1,0 +1,208 @@
+\chapter{Equations of Motion}
+The equations of motion are of the form
+\[
+\begin{bmatrix} {\textbf I} & {\bm 0} \\ {\bm 0} & {\textbf M}\end{bmatrix}
+\begin{Bmatrix} \dot{\bm p}\\ \dot{\bm w}\end{Bmatrix}
++\begin{bmatrix} {\textbf V} & -{\textbf I} \\ {\textbf K} & {\textbf C} \end{bmatrix}
+\begin{Bmatrix} {\bm p}\\ {\bm w}\end{Bmatrix}
+=\begin{Bmatrix} {\bm 0} \\ {\bm f} \end{Bmatrix}
++\begin{bmatrix} {\bm 0}\\ {\textbf F}\end{bmatrix}
+\begin{Bmatrix} {\bm u}\end{Bmatrix}
+\]
+The mass matrix of the system is
+\pgfplotstableset{
+begin table=\begin{longtable},
+end table=\end{longtable}}
+\begin{footnotesize}
+\begin{center}
+\pgfplotstabletypeset[
+columns={[index]0,[index]1,[index]2,[index]0,[index]1,[index]2,[index]0,[index]1,[index]2},
+display columns/0/.style={select equal part entry of={0}{3}},
+display columns/1/.style={select equal part entry of={0}{3}},
+display columns/2/.style={select equal part entry of={0}{3}},
+display columns/3/.style={select equal part entry of={1}{3}},
+display columns/4/.style={select equal part entry of={1}{3}},
+display columns/5/.style={select equal part entry of={1}{3}},
+display columns/6/.style={select equal part entry of={2}{3}},
+display columns/7/.style={select equal part entry of={2}{3}},
+display columns/8/.style={select equal part entry of={2}{3}},
+]{unformatted/mass_matrix.out}
+\end{center}
+\end{footnotesize}
+The damping matrix is
+\pgfplotstableset{
+begin table=\begin{longtable},
+end table=\end{longtable}}
+\begin{footnotesize}
+\begin{center}
+\pgfplotstabletypeset[
+columns={[index]0,[index]1,[index]2,[index]0,[index]1,[index]2,[index]0,[index]1,[index]2},
+display columns/0/.style={select equal part entry of={0}{3}},
+display columns/1/.style={select equal part entry of={0}{3}},
+display columns/2/.style={select equal part entry of={0}{3}},
+display columns/3/.style={select equal part entry of={1}{3}},
+display columns/4/.style={select equal part entry of={1}{3}},
+display columns/5/.style={select equal part entry of={1}{3}},
+display columns/6/.style={select equal part entry of={2}{3}},
+display columns/7/.style={select equal part entry of={2}{3}},
+display columns/8/.style={select equal part entry of={2}{3}},
+]{unformatted/damping_matrix.out}
+\end{center}
+\end{footnotesize}
+The stiffness matrix is
+\pgfplotstableset{
+begin table=\begin{longtable},
+end table=\end{longtable}}
+\begin{footnotesize}
+\begin{center}
+\pgfplotstabletypeset[
+columns={[index]0,[index]1,[index]2,[index]0,[index]1,[index]2,[index]0,[index]1,[index]2},
+display columns/0/.style={select equal part entry of={0}{3}},
+display columns/1/.style={select equal part entry of={0}{3}},
+display columns/2/.style={select equal part entry of={0}{3}},
+display columns/3/.style={select equal part entry of={1}{3}},
+display columns/4/.style={select equal part entry of={1}{3}},
+display columns/5/.style={select equal part entry of={1}{3}},
+display columns/6/.style={select equal part entry of={2}{3}},
+display columns/7/.style={select equal part entry of={2}{3}},
+display columns/8/.style={select equal part entry of={2}{3}},
+]{unformatted/stiffness_matrix.out}
+\end{center}
+\end{footnotesize}
+The velocity matrix is
+\pgfplotstableset{
+begin table=\begin{longtable},
+end table=\end{longtable}}
+\begin{footnotesize}
+\begin{center}
+\pgfplotstabletypeset[
+columns={[index]0,[index]1,[index]2,[index]0,[index]1,[index]2,[index]0,[index]1,[index]2},
+display columns/0/.style={select equal part entry of={0}{3}},
+display columns/1/.style={select equal part entry of={0}{3}},
+display columns/2/.style={select equal part entry of={0}{3}},
+display columns/3/.style={select equal part entry of={1}{3}},
+display columns/4/.style={select equal part entry of={1}{3}},
+display columns/5/.style={select equal part entry of={1}{3}},
+display columns/6/.style={select equal part entry of={2}{3}},
+display columns/7/.style={select equal part entry of={2}{3}},
+display columns/8/.style={select equal part entry of={2}{3}},
+]{unformatted/velocity_matrix.out}
+\end{center}
+\end{footnotesize}
+The input force matrix is
+\pgfplotstableset{
+begin table=\begin{longtable},
+end table=\end{longtable}}
+\begin{footnotesize}
+\begin{center}
+\pgfplotstabletypeset[
+columns={[index]0,[index]1,[index]2,[index]0,[index]1,[index]2,[index]0,[index]1,[index]2},
+display columns/0/.style={select equal part entry of={0}{3}},
+display columns/1/.style={select equal part entry of={0}{3}},
+display columns/2/.style={select equal part entry of={0}{3}},
+display columns/3/.style={select equal part entry of={1}{3}},
+display columns/4/.style={select equal part entry of={1}{3}},
+display columns/5/.style={select equal part entry of={1}{3}},
+display columns/6/.style={select equal part entry of={2}{3}},
+display columns/7/.style={select equal part entry of={2}{3}},
+display columns/8/.style={select equal part entry of={2}{3}},
+]{unformatted/forcing_matrix.out}
+\end{center}
+\end{footnotesize}
+The system is subject to constraints
+\[
+\begin{bmatrix}
+\textbf{J}_\textrm{h} & {\bm 0}\\-{\textbf J}_\textrm{h}{\textbf V} & {\textbf J}_\textrm{h}\\ {\bm 0} & {\textbf J}_\textrm{nh}
+\end{bmatrix}
+\begin{bmatrix}
+\dot{\bm p} & {\bm p} \\ \dot{\bm w} & {\bm w}
+\end{bmatrix}
+=\begin{bmatrix}
+{\bm 0} & {\bm 0}\\{\bm 0} & {\bm 0}\\{\bm 0} & {\bm 0}
+\end{bmatrix}
+\]
+\pgfplotstableset{
+begin table=\begin{longtable},
+end table=\end{longtable}}
+\begin{footnotesize}
+\begin{center}
+\pgfplotstabletypeset[
+columns={[index]0,[index]1,[index]2,[index]0,[index]1,[index]2,[index]0,[index]1,[index]2},
+display columns/0/.style={select equal part entry of={0}{3}},
+display columns/1/.style={select equal part entry of={0}{3}},
+display columns/2/.style={select equal part entry of={0}{3}},
+display columns/3/.style={select equal part entry of={1}{3}},
+display columns/4/.style={select equal part entry of={1}{3}},
+display columns/5/.style={select equal part entry of={1}{3}},
+display columns/6/.style={select equal part entry of={2}{3}},
+display columns/7/.style={select equal part entry of={2}{3}},
+display columns/8/.style={select equal part entry of={2}{3}},
+]{unformatted/jacobian_matrix.out}
+\end{center}
+\end{footnotesize}
+There are 8 degrees of freedom.\\
+
+\noindent The full state space equations:
+\[
+\begin{bmatrix}
+{\textbf E} & {\bm 0} \\ {\bm 0} & {\textbf I}
+\end{bmatrix}
+\begin{Bmatrix}
+\dot{\bm x}\\ {\bm y}\end{Bmatrix}
+=\begin{bmatrix}
+\textbf{A} & \textbf{B} \\ \textbf{C} & \textbf{D}
+\end{bmatrix}
+\begin{Bmatrix}
+{\bm x}\\ {\bm u}\end{Bmatrix}
+\]
+\begin{tiny}
+\[
+\begin{bmatrix}
+{\textbf A} & {\textbf B} \\ {\textbf C} & {\textbf D}
+\end{bmatrix} =
+\left[\begin{array}
+{@{}cccccccccccccccc|cc@{}}
+-3624.3 & -5443.9 & 7224.6 & 3405.5 & 9222.7 & -5049.1 & -2830.2 & -1815.3 & 3958.2 & 611.82 & 3466.1 & -1948.3 & -542.22 &  3189 & -3478.6 & 4982.3 & -16309 & 130.2 \\
+4689.4 & 3003.8 & -2171.4 & -2323.7 & -1796 & -592.36 & 3274.1 & 1194.2 & -4443.5 & 931.76 & -323.9 & 1976.3 & 613.03 & -2398.6 &  1535 & -4736.8 & 13953 & 117.32 \\
+-0.06215 & -0.04669 &    -0 & -0.13768 &    -0 &    -0 & 0.20737 & -0.34521 & 0.12667 & -0.1949 & 0.3906 & 0.10476 & 0.42195 & -0.38785 & 0.43299 & 0.28159 &     0 &     0 \\
+1189.8 &  1516 & 820.92 & 101.97 & -88.172 & 854.92 & -147.94 & -752.78 & -671.39 & 452.37 & -1984.4 & 1743.9 & 1621.9 & 1567.8 & 1807.5 & -551.51 & 976.92 & 67.074 \\
+-0.63649 & -0.14613 &    -0 & -0.13222 &    -0 &    -0 & 0.08304 & -0.082 & -0.44984 & 0.53161 & -0.16578 & 0.04728 & 0.11453 & -0.1161 & 0.02288 & 0.02493 &     0 &     0 \\
+0.28401 & -0.07236 &    -0 & -0.02132 &    -0 &    -0 & -0.51614 & 0.20974 & 0.09397 & 0.25795 & -0.18502 & -0.04127 & 0.45229 & -0.46837 & -0.23185 & 0.1194 &     0 &     0 \\
+-840.29 & 5674.1 & -7601.9 & -1877.2 & -9290.1 & 6925.4 & -808.89 & 136.82 & 289.71 & -1620.1 & -5810.4 & -624.72 & 700.36 & -666.98 & 4443.1 & -1155.8 & 2479.2 & -71.213 \\
+2932.7 &  1907 & -2759.4 & -2012.1 & 1741.3 & -6502.2 & 2945.6 & 1391.3 & -3233.9 & 1163.4 &  2647 & -2389.1 & -1602.6 & -4343 & -255.23 & -4116 & 7118.5 & -124.61 \\
+13055 & 6015.7 & 4856.8 & -2100.3 & 3618.8 & -4434.2 & 5911.6 & -609.67 & -10382 & 4654.1 & -2532.1 & 9714.1 & 5951.7 & 1579.2 & 5400.6 & -9411.6 & 25989 & 72.235 \\
+6659.2 & 3899.4 & -2736.1 & -1972.5 & -6581.9 & -3179.4 & 4457.3 & 3032.5 & -6962 & -553.7 & -3664.7 & 7351.5 & 1927.6 & -2993.5 & 4363.2 & -6984.9 & 9233.8 & -104.89 \\
+2917.9 & 2699.7 & -5433.2 & -3335.1 & -2172.8 & -548.01 & 3335.1 & 1750.1 & -3288.9 & 697.75 & 2085.9 & -2417 & -1838.2 & -4950.7 & -409.77 & -4340 & 15575 &    88 \\
+6517.8 & 2528.1 & 410.9 & -1756.4 & -2125.5 & 30.708 & 3832.7 & 1217.8 & -5811.8 & 1097.3 & -1419.9 & 5955.4 & 2247.8 & -889.33 & 2299.1 & -5314.1 & 15895 & 80.147 \\
+-147.59 & 6463.9 & -11302 & -3335.5 & -4146 & -6361.2 & 1292.4 & 1517.3 & -1176.1 & -304.47 & -704.86 & -7188.8 & -2949 & -6320.9 & 2586.1 & -4054.2 & -1141.5 & 20.67 \\
+-622.38 & -2458.1 & 4154.3 & 673.62 & 4021.8 & 4617.5 & -825.25 & -1662.3 &  1513 & 1255.1 & 2437.8 & -798.46 & 272.6 & 2363.1 & -2573 & 2307.8 & 6779.4 & -158.75 \\
+-2659.3 & -167.17 & -5662.7 & -1286.9 & -4421.3 & 1191.5 & 124.3 & 1829.8 &  1238 & -1823.1 & 1136.7 & -3758.1 & -3025.7 & -3871.9 & -1408.2 & 241.66 & -1044 & -22.767 \\
+-9856.8 & -1770.6 & -10586 & -130.03 & -7548.1 & -1867.7 & -3002.5 & 3068.1 & 6286.9 & -5205 & 789.15 & -9138.8 & -6489 & -6174.3 & -2349.2 & 4110.4 & -24805 & 104.86 \\
+\hline
+& \\[\dimexpr-\normalbaselineskip+2pt]
+-0.04211 & -0.43062 & 0.127 & 0.02971 & -0.32332 & 0.0146 & 0.17726 & 0.4016 & -0.13817 & -0.2568 & 0.14736 & 0.43017 & -0.20726 & -0.3453 & -0.20861 & -0.02866 &     0 &     0 \\
+0.01987 & 0.01609 & 0.16777 & 0.12485 & -0.18075 & 0.09932 & -0.02387 & -0.02516 & -0.02335 & 0.06713 & 0.06354 & -0.1282 & -0.01056 & -0.02447 & 0.07362 & -0.05972 &     0 &     0 \\
+\end{array}\right]
+\]
+\[
+\textbf{E}=
+\begin{bmatrix}
+6.6709 & -1.5133 &     0 & 4.7961 &    -0 &    -0 & 6.9095 & -0.726 & 5.6955 & -12.167 & -2.096 & -5.8914 & 8.9139 & 0.92396 & -5.0412 & -4.606 \\
+-1.5133 & 10.368 &     0 & -4.7096 &    -0 &     0 & -11.796 & 4.0445 & -6.7143 & 22.349 & 4.9233 & 12.76 & -23.932 & -1.922 & 9.3624 & 17.339 \\
+    0 &     0 &     1 &    -0 &     0 &     0 &     0 &    -0 &    -0 &     0 &    -0 &    -0 &     0 &     0 &     0 &    -0 \\
+4.7961 & -4.7096 &    -0 & 10.272 &     0 &    -0 & 14.981 & -2.1922 & 9.681 & -24.538 & -4.8215 & -12.77 & 24.07 & 2.0376 & -12.581 & -15.039 \\
+   -0 &    -0 &     0 &     0 &     1 &     0 &    -0 &    -0 &     0 &    -0 &    -0 &     0 &     0 &     0 &     0 &    -0 \\
+   -0 &     0 &     0 &    -0 &     0 &     1 &    -0 &    -0 &    -0 &     0 &    -0 &    -0 &     0 &     0 &     0 &     0 \\
+6.9095 & -11.796 &     0 & 14.981 &    -0 &    -0 & 30.866 & -3.1091 & 17.581 & -44.377 & -9.2493 & -24.957 & 45.275 & 5.486 & -20.626 & -28.89 \\
+-0.726 & 4.0445 &    -0 & -2.1922 &    -0 &    -0 & -3.1091 & 6.8508 & -2.8678 & 11.743 & 1.3484 & 4.4964 & -12.316 & 2.4145 & 4.8687 & 8.337 \\
+5.6955 & -6.7143 &    -0 & 9.681 &     0 &    -0 & 17.581 & -2.8678 & 15.325 & -27.962 & -5.0324 & -14.266 & 28.444 & 1.8912 & -13.257 & -19.402 \\
+-12.167 & 22.349 &     0 & -24.538 &    -0 &     0 & -44.377 & 11.743 & -27.962 & 82.208 & 15.338 & 42.641 &   -82 & -5.1117 & 37.631 & 53.446 \\
+-2.096 & 4.9233 &    -0 & -4.8215 &    -0 &    -0 & -9.2493 & 1.3484 & -5.0324 & 15.338 & 5.0953 & 9.0206 & -15.172 & -2.3871 & 7.7557 & 11.101 \\
+-5.8914 & 12.76 &    -0 & -12.77 &     0 &    -0 & -24.957 & 4.4964 & -14.266 & 42.641 & 9.0206 & 24.851 & -43.446 & -4.5537 & 19.756 & 28.671 \\
+8.9139 & -23.932 &     0 & 24.07 &     0 &     0 & 45.275 & -12.316 & 28.444 &   -82 & -15.172 & -43.446 & 88.994 & 3.9855 & -38.599 & -57.017 \\
+0.92396 & -1.922 &     0 & 2.0376 &     0 &     0 & 5.486 & 2.4145 & 1.8912 & -5.1117 & -2.3871 & -4.5537 & 3.9855 & 5.0113 & -2.6945 & -4.0802 \\
+-5.0412 & 9.3624 &     0 & -12.581 &     0 &     0 & -20.626 & 4.8687 & -13.257 & 37.631 & 7.7557 & 19.756 & -38.599 & -2.6945 & 20.632 & 26.192 \\
+-4.606 & 17.339 &    -0 & -15.039 &    -0 &     0 & -28.89 & 8.337 & -19.402 & 53.446 & 11.101 & 28.671 & -57.017 & -4.0802 & 26.192 & 42.701 \\
+\end{bmatrix}
+\]
+\end{tiny}

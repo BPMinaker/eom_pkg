@@ -1,0 +1,5 @@
+%%% Steady State Transfer Function
+num outputtoinput gain
+{1} {F Chassis bounce/LF Wheel bump} 8.274459900000e-01
+{2} {F Susp travel/LF Wheel bump} -1.559564500000e-01
+{3} {F Tire squish/LF Wheel bump} -1.659756000000e-02

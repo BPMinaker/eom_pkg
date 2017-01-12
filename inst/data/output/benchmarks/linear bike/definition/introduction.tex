@@ -1,0 +1,73 @@
+\chapter*{IFToMM Benchmark Problem Linearized Bicycle}
+\section*{Problem Description}
+\setcounter{chapter}{1}
+The bicycle benchmark is based on the paper by Meijaard et al\cite{meijaard}.  The results posted here are reproduced directly from their paper.  The bicycle is modeled as four rigid bodies: the frame and rider treated as one body, the handlebar and fork assembly, the front wheel, and the rear wheel.  The fork assembly is attached to the frame with a revolute joint representing the steering head bearing.  The location of the steering head bearing is not given, but it must lie on the steer axis, which is defined by the axis tilt, and the trail (the distance from the front wheel ground contact to the point where the steer axis intersects the ground plane, with positive trail indicating the intersection lies in front of the wheel contact).  Each wheel is also attached with a revolute joint at its centre, the front wheel to the fork assembly, and the rear wheel to the frame.  Friction is neglected in all three joints.  The wheels are assumed to be perfectly round, uniform, and `knife edged'.  The bottom of each wheel contacts the ground on a horizontal plane.  The contact is treated as a rolling constraint, i.e., the lowest point on the wheel has zero velocity, and must be in the ground plane.  The vertical and longitudinal motion of the contact point is treated as holonomic, i.e., the constraints are written in terms of position and orientation.  The lateral motion of the tire contact point is treated as nonholonomic, i.e., the constraint is written only in terms of velocities.  The contact point may displace laterally, but only when the wheel steer history allows it.  As a result, the bicycle has two degrees of freedom, in steer angle~$\delta$ and lean angle~$\phi$, that have dynamic responses.  In addition, it has neutrally stable modes in longitudinal, lateral and yaw motions.  The equations of motion are linearized around a fixed forward speed in the range from 0 to 10 \si{\m/\s}.  The properties of the system are given in Table~\ref{properties}.  Note that the sign convention used is the SAE standard, with positive $z$ pointing downward, and that the rear wheel contact point is taken at the origin.
+
+\begin{table}[ht]
+\begin{center}
+\begin{threeparttable}
+\begin{footnotesize}
+\caption{Benchmark Bicycle Properties}
+\label{properties}
+\begin{tabular}{lll}
+\toprule
+parameter & symbol & value for benchmark\\
+\midrule
+wheel base & $w$ & $1.02$ \si{\m}\\
+trail & $c$ & $0.08$ \si{\m}\\
+steer axis tilt ($\pi/2$-head angle) & $\lambda$ & $\pi/10$ \si{\radian} (\ang{90}-\ang{72})\\
+gravity & $g$ & $9.81$ \si{\N/\kg}\\
+forward speed & $v$ & various \si{\m/\s}\\
+&&\\
+Rear wheel R&&\\
+radius & $r_\text{R}$ & $0.3$ \si{\m}\\
+mass & $m_\text{R}$ & $2$ \si{\kg}\\
+mass moments of inertia & ($I_{\text{R}xx}$, $I_{\text{R}yy}$) & ($0.0603$, $0.12$) \si{\kg.\m^2}\\
+&&\\
+rear Body and frame assembly B&&\\
+position centre of mass & ($x_\text{B}$, $z_\text{B}$) & ($0.3$, $-0.9$) \si{\m}\\
+mass & $m_\text{B}$ & $85$ \si{\kg}\\
+mass moments of inertia & 
+$\begin{bmatrix}
+I_{\text{B}xx} & 0 & I_{\text{B}xz}\\
+0 & I_{\text{B}yy} & 0\\
+I_{\text{B}xz} & 0 & I_{\text{B}zz} 
+\end{bmatrix}$
+&
+$\begin{bmatrix}
+9.2 & 0 & 2.4\\
+0 & 11 & 0\\
+2.4 & 0 & 2.8
+\end{bmatrix}$
+\si{\kg.\m^2}
+\\
+&&\\
+front Handlebar and fork assembly H&&\\
+position centre of mass & ($x_\text{H}$, $z_\text{H}$) & ($0.9$, $-0.7$) \si{\m}\\
+mass & $m_\text{H}$ & $4$ \si{\kg}\\
+mass moments of inertia &
+$\begin{bmatrix}
+I_{\text{H}xx} & 0 & I_{\text{H}xz}\\
+0 & I_{\text{H}yy} & 0\\
+I_{\text{H}xz} & 0 & I_{\text{H}zz}
+\end{bmatrix}$
+&
+$\begin{bmatrix}
+0.05892 & 0 & -0.00756\\
+0 & 0.06 & 0\\
+-0.00756 & 0 & 0.00708
+\end{bmatrix}$
+\si{\kg.\m^2}
+\\
+&&\\
+Front wheel F&&\\
+radius & $r_\text{F}$ & $0.35$ \si{\m}\\
+mass & $m_\text{F}$ & $3$ \si{\kg}\\
+mass moments of inertia & ($I_{\text{F}xx}$, $I_{\text{F}yy}$) & ($0.1405$, $0.28$) \si{\kg.\m^2}\\
+\bottomrule
+\end{tabular}
+\end{footnotesize}
+\end{threeparttable}
+\end{center}
+\end{table}
+

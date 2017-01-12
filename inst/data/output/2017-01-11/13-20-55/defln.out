@@ -1,0 +1,4 @@
+%%% Deflection
+num name type x y z 
+{1} {block} translation -0.00000000e+00 -0.00000000e+00 -9.81000000e-02
+{ } { } rotation -0.00000000e+00 -0.00000000e+00 -0.00000000e+00

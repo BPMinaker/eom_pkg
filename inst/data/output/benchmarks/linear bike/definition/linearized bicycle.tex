@@ -1,0 +1,72 @@
+\documentclass[11pt,letterpaper,oneside]{memoir}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{decorations,arrows,shapes,backgrounds}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage[OT1]{fontenc}
+\usepackage[semibold]{libertine}
+\usepackage[lcgreekalpha,slantedGreek]{libertinust1math}
+\useosf
+\newcommand{\bm}{\mathbfit}
+\usepackage[kerning]{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black}
+\setcounter{MaxMatrixCols}{30}
+\renewcommand{\textfraction}{0.05}
+\settypeblocksize{9in}{5.5in}{*}
+\setlrmargins{*}{*}{1}
+\setulmargins{*}{*}{1}
+\setheadfoot{\onelineskip}{3\onelineskip}
+\setheaderspaces{*}{\onelineskip}{*}
+\checkandfixthelayout 
+\include{table_def}
+\copypagestyle{eom}{ruled}
+\makeevenhead{eom}{\scshape\leftmark}{}{\rightmark}
+\makeoddhead{eom}{\scshape\leftmark}{}{\rightmark}
+\makeevenfoot{eom}{\footnotesize{\textit{University of Windsor\\Vehicle Dynamics and Control Research Group}}}{\thepage}{\footnotesize{\textit{IFToMM Benchmark\\\today}}}
+\makeoddfoot{eom}{\footnotesize{\textit{University of Windsor\\Vehicle Dynamics and Control Research Group}}}{\thepage}{\footnotesize{\textit{IFToMM Benchmark\\\today}}}
+\makeheadrule{eom}{\textwidth}{\normalrulethickness}
+\makefootrule{eom}{\textwidth}{\normalrulethickness}{\footruleskip}
+\pagestyle{empty}
+\chapterstyle{ger}
+\renewcommand*{\chapnamefont}{\huge\bfseries\scshape}
+\renewcommand*{\chaptitlefont}{\Huge\scshape}
+\captionnamefont{\bfseries}
+\begin{document}
+%\frontmatter
+%\include{titlepage}
+%\include{titlingpage}
+%\tableofcontents*
+%\newpage
+%\listoffigures*
+%\newpage
+%\listoftables*
+%\newpage
+\mainmatter
+\pagestyle{eom}
+\include{introduction}
+\include{analysis}
+\include{conclusion}
+% \appendix
+% \include{appendix}
+\backmatter
+
+\begin{thebibliography}{6}
+ \addtolength{\itemsep}{-5 pt}
+\bibitem{meijaard} J.P.~Meijaard, J.M.~Papadopoulos, A.~Ruina, and A.L.~Schwab,
+``Linearised dynamics equations for the balance and steer of a bicycle: a benchmark and review'',
+\textit{Proc.~Roy.~Soc.~A}, 463 (2007), pp.~1955--1982.
+
+\end{thebibliography}
+
+\end{document}

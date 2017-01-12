@@ -1,0 +1,92 @@
+\chapter{Introduction}
+Replace this text with the introduction of your report.
+\section{Geometry Diagram}
+ The system geometry is shown in the following diagram.
+\begin{figure}[hbtp]
+\begin{center}
+\input{sketch}
+\caption{Geometry}
+\label{geometry}
+\end{center}
+\end{figure}
+
+
+\section{System Description}
+The properties of the bodies are given in Tables~\ref{bodycoords}~and~\ref{bodyinertia}.
+The properties of the connecctions are given in Tables~\ref{pointcoords},~\ref{linecoords},~and~\ref{connectcoords}.
+\begin{table}[ht]
+\begin{center}
+\begin{threeparttable}
+\begin{footnotesize}
+\caption{Body CG Locations and Mass}
+\label{bodycoords}
+\pgfplotstabletypeset[%
+every head row/.style={output empty row,
+before row={\toprule No. & Body Name &
+\multicolumn{6}{c}{Location [m]} &
+\multicolumn{2}{c}{Mass [kg]}\\},
+after row=\midrule},
+columns={num,name,rx,ry,rz,mass}]{bodydata.out}
+\end{footnotesize}
+\end{threeparttable}
+\end{center}
+\end{table}
+\begin{table}[ht]
+\begin{center}
+\begin{threeparttable}
+\begin{footnotesize}
+\caption{Body Inertia Properties}
+\label{bodyinertia}
+\pgfplotstabletypeset[%
+every head row/.style={output empty row, before row={\toprule No. & Body Name &
+\multicolumn{12}{c}{Inertia [kg$\cdot$m$^2$] ($I_{\textrm{xx}}$, $I_{\textrm{yy}}$, $I_{\textrm{zz}}$;  $I_{\textrm{xy}}$, $I_{\textrm{yz}}$, $I_{\textrm{zx}}$)}\\},
+after row=\midrule}, columns={num,name,ixx,iyy,izz,ixy,iyz,ixz}]{bodydata.out}
+\begin{tablenotes}
+\item Note: inertias are defined as the positive integral over the body, e.g., $I_{\textrm{xy}}=+\! \int \! r_{\textrm{x}}r_{\textrm{y}} \,\text{d}m $.
+\end{tablenotes}
+\end{footnotesize}
+\end{threeparttable}
+\end{center}
+\end{table}
+\begin{table}[ht]
+\begin{center}
+\begin{threeparttable}
+\begin{footnotesize}
+\caption{Connection Location and Direction}
+\label{pointcoords}
+\pgfplotstabletypeset[%
+every head row/.style={output empty row, before row={\toprule No. & Connection Name &
+\multicolumn{6}{c}{Location [m]} & \multicolumn{6}{c}{Unit Axis}\\},
+after row=\midrule}, columns={num,name,rx,ry,rz,ux,uy,uz}]{pointdata.out}
+\end{footnotesize}
+\end{threeparttable}
+\end{center}
+\end{table}
+\begin{table}[ht]
+\begin{center}
+\begin{threeparttable}
+\begin{footnotesize}
+\caption{Connection Locations}
+\label{linecoords}
+\pgfplotstabletypeset[%
+every head row/.style={output empty row, before row={\toprule No. & Connection Name &
+\multicolumn{6}{c}{Location [m]} & \multicolumn{6}{c}{Location [m]}\\},
+after row=\midrule}, columns={num,name,rx,ry,rz,ux,uy,uz}]{linedata.out}
+\end{footnotesize}
+\end{threeparttable}
+\end{center}
+\end{table}
+\begin{table}[ht]
+\begin{center}
+\begin{threeparttable}
+\begin{footnotesize}
+\caption{Connection Properties}
+\label{connectcoords}
+\pgfplotstabletypeset[%
+every head row/.style={output empty row, before row={\toprule No. & Connection Name &
+\multicolumn{1}{c}{Stiffness [N/m]} & \multicolumn{1}{c}{Damping [Ns/m]}\\},
+after row=\midrule}, columns={num,name,stiffness,damping}]{stiffnessdata.out}
+\end{footnotesize}
+\end{threeparttable}
+\end{center}
+\end{table}

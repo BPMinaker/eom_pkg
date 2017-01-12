@@ -1,0 +1,58 @@
+\section*{Analysis}
+
+The equations of motion of the system can be generated using Lagrange's equations.  The result is two coupled second-order non-linear ordinary differential equations, in the rotational coordinates of each body.  The table orientation is defined by $\theta_1$ and the wheel by $\theta_2$.  Both are absolute coordinates, i.e., measured relative to ground, and are zero when the table is level, and the point of contact of the wheel is at the table centre point.
+
+\begin{equation}
+T=\frac{1}{24}ml^2\dot{\theta}_1^2+\frac{1}{4}mr^2\dot{\theta}_2^2+\frac{1}{2}mr^2((\theta_2-\theta_1)^2 \dot{\theta}_1^2+\dot\theta_2^2)
+\end{equation}
+
+\begin{equation}
+V=mgr((\theta_1-\theta_2)\sin\theta_1+\cos\theta_1)
+\end{equation}
+
+\begin{equation}
+\left(\frac{1}{12}ml^2+mr^2(\theta_2-\theta_1)^2\right)\ddot{\theta}_1+mr(\theta_2-\theta_1)\left(r(2\dot{\theta}_1\dot{\theta}_2 - \dot{\theta}_1^2) -g\cos\theta_1\right)=0
+\end{equation}
+
+\begin{equation}
+ \frac{3}{2}mr^2\ddot{\theta}_2-mr^2\dot{\theta}_1^2(\theta_2-\theta_1)-mgr\sin\theta_1=0
+\end{equation}
+
+These equations are linearized by discarding any products of variables, and substituting the small angle approximations.  They are combined into a single vector equation.
+
+\begin{equation}
+ \begin{bmatrix}
+\frac{1}{12}ml^2 & 0\\
+ 0 & \frac{3}{2}mr^2
+\end{bmatrix}
+\begin{Bmatrix}
+ \ddot{\theta}_1 \\
+ \ddot{\theta}_2
+\end{Bmatrix}
++
+\begin{bmatrix}
+ mgr & -mgr\\
+ -mgr & 0  
+\end{bmatrix}
+\begin{Bmatrix}
+ \theta_1 \\
+ \theta_2
+\end{Bmatrix}
+=
+\begin{Bmatrix}
+ 0\\
+ 0
+\end{Bmatrix}
+\end{equation}
+
+The solution of the linear equations is found by substituting an exponential solution, giving the eigenvalue problem:
+
+\begin{equation}
+\det
+\begin{bmatrix}
+\frac{1}{12}ml^2s^2 +mgr& -mgr\\
+-mgr & \frac{3}{2}mr^2s^2
+\end{bmatrix}
+=0
+\end{equation}
+

@@ -1,0 +1,568 @@
+def n_sphere_segs 12
+def n_cyl_segs 16
+def n_whl_segs 24
+def n_segs 4
+def body_1_loc (6.779,0,4.724)
+def body_1_bot (6.779,0,4.424)
+def body_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_1_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_1_loc),[0,1,0])}(body_1_bot)}
+def body_2_loc (4.15,0,11.4)
+def body_2_bot (4.15,0,11.1)
+def body_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_2_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_2_loc),[0,1,0])}(body_2_bot)}
+def body_3_loc (11.64,0,7.7)
+def body_3_bot (11.64,0,7.4)
+def body_3 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_3_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_3_loc),[0,1,0])}(body_3_bot)}
+def body_4_loc (13.65,0,3.24)
+def body_4_bot (13.65,0,2.94)
+def body_4 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_4_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_4_loc),[0,1,0])}(body_4_bot)}
+def body_5_loc (1.96,0,3.113)
+def body_5_bot (1.96,0,2.813)
+def body_5 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_5_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_5_loc),[0,1,0])}(body_5_bot)}
+def body_6_loc (4.9263,0,1.7273)
+def body_6_bot (4.9263,0,1.4273)
+def body_6 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_6_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_6_loc),[0,1,0])}(body_6_bot)}
+def body_7_loc (14.1,0,2.82)
+def body_7_axis [0,1,0]
+def body_7_tang [0,0,1]
+def body_7_p1 (11.844,0.17625,2.82)
+def body_7_p2 (11.844,-0.17625,2.82)
+def body_7_p3 (11.844,0.705,2.82)
+def body_7_p4 (11.844,-0.705,2.82)
+def body_7_p5 (11.562,0.705,2.82)
+def body_7_p6 (11.562,-0.705,2.82)
+def body_7_p7 (12.3023,0,2.82)
+def body_7_l1 line (body_7_p1)(body_7_p3)(body_7_p5)(body_7_p6)(body_7_p4)(body_7_p2)
+def body_7_l2 sweep{n_cyl_segs/2,rotate(2*87.2/n_cyl_segs,(body_7_p7),[body_7_tang])}(body_7_p5)
+def body_7_s1 sweep[cull=false,fill opacity=0.5,fill=gray!20]{n_whl_segs<>,rotate(360/n_whl_segs,(body_7_loc),[body_7_axis]) }{body_7_l1}
+def body_7_s2 sweep[cull=false,fill opacity=0.5,fill=gray!20]{n_whl_segs,rotate(360/n_whl_segs,(body_7_loc),[body_7_axis]) }{body_7_l2}
+def body_7 {{body_7_s1}{body_7_s2}}
+def body_8_loc (0,0,2.97)
+def body_8_axis [0,1,0]
+def body_8_tang [0,0,1]
+def body_8_p1 (-2.376,0.18562,2.97)
+def body_8_p2 (-2.376,-0.18562,2.97)
+def body_8_p3 (-2.376,0.7425,2.97)
+def body_8_p4 (-2.376,-0.7425,2.97)
+def body_8_p5 (-2.673,0.7425,2.97)
+def body_8_p6 (-2.673,-0.7425,2.97)
+def body_8_p7 (-1.8934,0,2.97)
+def body_8_l1 line (body_8_p1)(body_8_p3)(body_8_p5)(body_8_p6)(body_8_p4)(body_8_p2)
+def body_8_l2 sweep{n_cyl_segs/2,rotate(2*87.2/n_cyl_segs,(body_8_p7),[body_8_tang])}(body_8_p5)
+def body_8_s1 sweep[cull=false,fill opacity=0.5,fill=gray!20]{n_whl_segs<>,rotate(360/n_whl_segs,(body_8_loc),[body_8_axis]) }{body_8_l1}
+def body_8_s2 sweep[cull=false,fill opacity=0.5,fill=gray!20]{n_whl_segs,rotate(360/n_whl_segs,(body_8_loc),[body_8_axis]) }{body_8_l2}
+def body_8 {{body_8_s1}{body_8_s2}}
+def body_9_loc (12.7614,0,5.5048)
+def body_9_bot (12.7614,0,5.2048)
+def body_9 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_9_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_9_loc),[0,1,0])}(body_9_bot)}
+def body_10_loc (14.1,1,2.82)
+def body_10_bot (14.1,1,2.52)
+def body_10 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_10_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_10_loc),[0,1,0])}(body_10_bot)}
+def body_11_loc (14.1,-1,2.82)
+def body_11_bot (14.1,-1,2.52)
+def body_11 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_11_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_11_loc),[0,1,0])}(body_11_bot)}
+def body_12_loc (12.2007,0,6.6024)
+def body_12_bot (12.2007,0,6.3024)
+def body_12 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_12_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_12_loc),[0,1,0])}(body_12_bot)}
+def body_13_loc (11.4,1.5624,2)
+def body_13_bot (11.4,1.5624,1.7)
+def body_13 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_13_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_13_loc),[0,1,0])}(body_13_bot)}
+def body_14_loc (11.4,1.75,3)
+def body_14_bot (11.4,1.75,2.7)
+def body_14 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_14_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_14_loc),[0,1,0])}(body_14_bot)}
+def body_15_loc (11.4,-1.5624,2)
+def body_15_bot (11.4,-1.5624,1.7)
+def body_15 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_15_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_15_loc),[0,1,0])}(body_15_bot)}
+def body_16_loc (11.4,-1.75,3)
+def body_16_bot (11.4,-1.75,2.7)
+def body_16 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(body_16_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(body_16_loc),[0,1,0])}(body_16_bot)}
+def flex_point_1_top (14.1,-0.25,0)
+def flex_point_1_axis [0,-0.5,0]
+def flex_point_1_p1 (14.3,0.25,0)
+def flex_point_1_p2 (14.3,-0.25,0)
+def flex_point_1_l1 line(flex_point_1_p1)(flex_point_1_p2)
+def flex_point_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(flex_point_1_top),[flex_point_1_axis]) }{flex_point_1_l1}}
+def flex_point_2_top (0,-0.25,0)
+def flex_point_2_axis [0,-0.5,0]
+def flex_point_2_p1 (0.2,0.25,0)
+def flex_point_2_p2 (0.2,-0.25,0)
+def flex_point_2_l1 line(flex_point_2_p1)(flex_point_2_p2)
+def flex_point_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(flex_point_2_top),[flex_point_2_axis]) }{flex_point_2_l1}}
+def flex_point_3_top (13.85,0,0)
+def flex_point_3_axis [-0.5,0,0]
+def flex_point_3_p1 (14.35,0.2,0)
+def flex_point_3_p2 (13.85,0.2,0)
+def flex_point_3_l1 line(flex_point_3_p1)(flex_point_3_p2)
+def flex_point_3 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(flex_point_3_top),[flex_point_3_axis]) }{flex_point_3_l1}}
+def flex_point_4_top (-0.25,0,0)
+def flex_point_4_axis [-0.5,0,0]
+def flex_point_4_p1 (0.25,0.2,0)
+def flex_point_4_p2 (-0.25,0.2,0)
+def flex_point_4_l1 line(flex_point_4_p1)(flex_point_4_p2)
+def flex_point_4 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(flex_point_4_top),[flex_point_4_axis]) }{flex_point_4_l1}}
+def flex_point_5_top (14.1,0,-0.25)
+def flex_point_5_axis [0,0,-0.5]
+def flex_point_5_p1 (14.1,0.2,0.25)
+def flex_point_5_p2 (14.1,0.2,-0.25)
+def flex_point_5_l1 line(flex_point_5_p1)(flex_point_5_p2)
+def flex_point_5 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(flex_point_5_top),[flex_point_5_axis]) }{flex_point_5_l1}}
+def flex_point_6_top (0,0,-0.25)
+def flex_point_6_axis [0,0,-0.5]
+def flex_point_6_p1 (0,0.2,0.25)
+def flex_point_6_p2 (0,0.2,-0.25)
+def flex_point_6_l1 line(flex_point_6_p1)(flex_point_6_p2)
+def flex_point_6 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(flex_point_6_top),[flex_point_6_axis]) }{flex_point_6_l1}}
+def rigid_point_1_top (0,-0.25,2.97)
+def rigid_point_1_axis [0,-0.5,0]
+def rigid_point_1_p1 (0.2,0.25,2.97)
+def rigid_point_1_p2 (0.2,-0.25,2.97)
+def rigid_point_1_l1 line(rigid_point_1_p1)(rigid_point_1_p2)
+def rigid_point_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_1_top),[rigid_point_1_axis]) }{rigid_point_1_l1}}
+def rigid_point_1_1_top (0,0,2.97)
+def rigid_point_1_1_axis [-1.96,0,-0.143]
+def rigid_point_1_1_p1 (1.96,0.18,3.113)
+def rigid_point_1_1_p2 (0,0.18,2.97)
+def rigid_point_1_1_l1 line(rigid_point_1_1_p1)(rigid_point_1_1_p2)
+def rigid_point_1_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_1_1_top),[rigid_point_1_1_axis]) }{rigid_point_1_1_l1}}
+def rigid_point_2_top (5.49,-0.25,3.608)
+def rigid_point_2_axis [0,-0.5,0]
+def rigid_point_2_p1 (5.69,0.25,3.608)
+def rigid_point_2_p2 (5.69,-0.25,3.608)
+def rigid_point_2_l1 line(rigid_point_2_p1)(rigid_point_2_p2)
+def rigid_point_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_2_top),[rigid_point_2_axis]) }{rigid_point_2_l1}}
+def rigid_point_2_1_top (5.49,0,3.608)
+def rigid_point_2_1_axis [3.53,0,0.495]
+def rigid_point_2_1_p1 (1.96,0.18,3.113)
+def rigid_point_2_1_p2 (5.49,0.18,3.608)
+def rigid_point_2_1_l1 line(rigid_point_2_1_p1)(rigid_point_2_1_p2)
+def rigid_point_2_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_2_1_top),[rigid_point_2_1_axis]) }{rigid_point_2_1_l1}}
+def rigid_point_2_2_top (5.49,0,3.608)
+def rigid_point_2_2_axis [-1.289,0,-1.116]
+def rigid_point_2_2_p1 (6.779,0.18,4.724)
+def rigid_point_2_2_p2 (5.49,0.18,3.608)
+def rigid_point_2_2_l1 line(rigid_point_2_2_p1)(rigid_point_2_2_p2)
+def rigid_point_2_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_2_2_top),[rigid_point_2_2_axis]) }{rigid_point_2_2_l1}}
+def rigid_point_3_top (5.39,-0.25,1.878)
+def rigid_point_3_axis [0,-0.5,0]
+def rigid_point_3_p1 (5.59,0.25,1.878)
+def rigid_point_3_p2 (5.59,-0.25,1.878)
+def rigid_point_3_l1 line(rigid_point_3_p1)(rigid_point_3_p2)
+def rigid_point_3 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_3_top),[rigid_point_3_axis]) }{rigid_point_3_l1}}
+def rigid_point_3_1_top (5.39,0,1.878)
+def rigid_point_3_1_axis [0.46367,0,0.15067]
+def rigid_point_3_1_p1 (4.9263,0.18,1.7273)
+def rigid_point_3_1_p2 (5.39,0.18,1.878)
+def rigid_point_3_1_l1 line(rigid_point_3_1_p1)(rigid_point_3_1_p2)
+def rigid_point_3_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_3_1_top),[rigid_point_3_1_axis]) }{rigid_point_3_1_l1}}
+def rigid_point_3_2_top (5.39,0,1.878)
+def rigid_point_3_2_axis [-1.389,0,-2.846]
+def rigid_point_3_2_p1 (6.779,0.18,4.724)
+def rigid_point_3_2_p2 (5.39,0.18,1.878)
+def rigid_point_3_2_l1 line(rigid_point_3_2_p1)(rigid_point_3_2_p2)
+def rigid_point_3_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_3_2_top),[rigid_point_3_2_axis]) }{rigid_point_3_2_l1}}
+def rigid_point_4_loc (3.64,0,8.438)
+def rigid_point_4_bot (3.64,0,8.188)
+def rigid_point_4 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(rigid_point_4_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(rigid_point_4_loc),[0,1,0])}(rigid_point_4_bot)}
+def rigid_point_4_1_top (3.64,0,8.438)
+def rigid_point_4_1_axis [-0.51,0,-2.962]
+def rigid_point_4_1_p1 (4.15,0.18,11.4)
+def rigid_point_4_1_p2 (3.64,0.18,8.438)
+def rigid_point_4_1_l1 line(rigid_point_4_1_p1)(rigid_point_4_1_p2)
+def rigid_point_4_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_4_1_top),[rigid_point_4_1_axis]) }{rigid_point_4_1_l1}}
+def rigid_point_4_2_top (3.64,0,8.438)
+def rigid_point_4_2_axis [-3.139,0,3.714]
+def rigid_point_4_2_p1 (6.779,0.18,4.724)
+def rigid_point_4_2_p2 (3.64,0.18,8.438)
+def rigid_point_4_2_l1 line(rigid_point_4_2_p1)(rigid_point_4_2_p2)
+def rigid_point_4_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_4_2_top),[rigid_point_4_2_axis]) }{rigid_point_4_2_l1}}
+def rigid_point_5_top (11.6283,0,7.7184)
+def rigid_point_5_axis [-0.20338,0,0.45677]
+def rigid_point_5_p1 (11.8317,0.2,7.2616)
+def rigid_point_5_p2 (11.6283,0.2,7.7184)
+def rigid_point_5_l1 line(rigid_point_5_p1)(rigid_point_5_p2)
+def rigid_point_5 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_5_top),[rigid_point_5_axis]) }{rigid_point_5_l1}}
+def rigid_point_5_1_top (11.73,0,7.49)
+def rigid_point_5_1_axis [0.09,0,-0.21]
+def rigid_point_5_1_p1 (11.64,0.18,7.7)
+def rigid_point_5_1_p2 (11.73,0.18,7.49)
+def rigid_point_5_1_l1 line(rigid_point_5_1_p1)(rigid_point_5_1_p2)
+def rigid_point_5_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_5_1_top),[rigid_point_5_1_axis]) }{rigid_point_5_1_l1}}
+def rigid_point_5_2_top (11.73,0,7.49)
+def rigid_point_5_2_axis [4.951,0,2.766]
+def rigid_point_5_2_p1 (6.779,0.18,4.724)
+def rigid_point_5_2_p2 (11.73,0.18,7.49)
+def rigid_point_5_2_l1 line(rigid_point_5_2_p1)(rigid_point_5_2_p2)
+def rigid_point_5_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_5_2_top),[rigid_point_5_2_axis]) }{rigid_point_5_2_l1}}
+def rigid_point_6_top (14.1,-0.25,2.82)
+def rigid_point_6_axis [0,-0.5,0]
+def rigid_point_6_p1 (14.3,0.25,2.82)
+def rigid_point_6_p2 (14.3,-0.25,2.82)
+def rigid_point_6_l1 line(rigid_point_6_p1)(rigid_point_6_p2)
+def rigid_point_6 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_6_top),[rigid_point_6_axis]) }{rigid_point_6_l1}}
+def rigid_point_6_1_top (14.1,0,2.82)
+def rigid_point_6_1_axis [0.45,0,-0.42]
+def rigid_point_6_1_p1 (13.65,0.18,3.24)
+def rigid_point_6_1_p2 (14.1,0.18,2.82)
+def rigid_point_6_1_l1 line(rigid_point_6_1_p1)(rigid_point_6_1_p2)
+def rigid_point_6_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_6_1_top),[rigid_point_6_1_axis]) }{rigid_point_6_1_l1}}
+def rigid_point_7_loc (12.7614,1,5.5048)
+def rigid_point_7_bot (12.7614,1,5.2548)
+def rigid_point_7 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(rigid_point_7_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(rigid_point_7_loc),[0,1,0])}(rigid_point_7_bot)}
+def rigid_point_7_1_top (12.7614,1,5.5048)
+def rigid_point_7_1_axis [-1.3386,0,2.6848]
+def rigid_point_7_1_p1 (14.1,1.18,2.82)
+def rigid_point_7_1_p2 (12.7614,1.18,5.5048)
+def rigid_point_7_1_l1 line(rigid_point_7_1_p1)(rigid_point_7_1_p2)
+def rigid_point_7_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_7_1_top),[rigid_point_7_1_axis]) }{rigid_point_7_1_l1}}
+def rigid_point_7_2_top (12.7614,1,5.5048)
+def rigid_point_7_2_axis [0,1,0]
+def rigid_point_7_2_p1 (12.5814,0,5.5048)
+def rigid_point_7_2_p2 (12.5814,1,5.5048)
+def rigid_point_7_2_l1 line(rigid_point_7_2_p1)(rigid_point_7_2_p2)
+def rigid_point_7_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_7_2_top),[rigid_point_7_2_axis]) }{rigid_point_7_2_l1}}
+def rigid_point_8_loc (12.7614,-1,5.5048)
+def rigid_point_8_bot (12.7614,-1,5.2548)
+def rigid_point_8 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(rigid_point_8_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(rigid_point_8_loc),[0,1,0])}(rigid_point_8_bot)}
+def rigid_point_8_1_top (12.7614,-1,5.5048)
+def rigid_point_8_1_axis [-1.3386,0,2.6848]
+def rigid_point_8_1_p1 (14.1,-0.82,2.82)
+def rigid_point_8_1_p2 (12.7614,-0.82,5.5048)
+def rigid_point_8_1_l1 line(rigid_point_8_1_p1)(rigid_point_8_1_p2)
+def rigid_point_8_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_8_1_top),[rigid_point_8_1_axis]) }{rigid_point_8_1_l1}}
+def rigid_point_8_2_top (12.7614,-1,5.5048)
+def rigid_point_8_2_axis [0,-1,0]
+def rigid_point_8_2_p1 (12.9414,0,5.5048)
+def rigid_point_8_2_p2 (12.9414,-1,5.5048)
+def rigid_point_8_2_l1 line(rigid_point_8_2_p1)(rigid_point_8_2_p2)
+def rigid_point_8_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_8_2_top),[rigid_point_8_2_axis]) }{rigid_point_8_2_l1}}
+def rigid_point_9_top (10.4,1.8748,2)
+def rigid_point_9_axis [0,-0.5,0]
+def rigid_point_9_p1 (10.6,2.3748,2)
+def rigid_point_9_p2 (10.6,1.8748,2)
+def rigid_point_9_l1 line(rigid_point_9_p1)(rigid_point_9_p2)
+def rigid_point_9 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_9_top),[rigid_point_9_axis]) }{rigid_point_9_l1}}
+def rigid_point_9b_top (10.4,2.1248,1.75)
+def rigid_point_9b_axis [0,0,-0.5]
+def rigid_point_9b_p1 (10.4,2.3248,2.25)
+def rigid_point_9b_p2 (10.4,2.3248,1.75)
+def rigid_point_9b_l1 line(rigid_point_9b_p1)(rigid_point_9b_p2)
+def rigid_point_9b {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_9b_top),[rigid_point_9b_axis]) }{rigid_point_9b_l1}}
+def rigid_point_9_1_top (10.4,2.1248,2)
+def rigid_point_9_1_axis [-1,0.5624,0]
+def rigid_point_9_1_p1 (11.4882,1.7193,2)
+def rigid_point_9_1_p2 (10.4882,2.2817,2)
+def rigid_point_9_1_l1 line(rigid_point_9_1_p1)(rigid_point_9_1_p2)
+def rigid_point_9_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_9_1_top),[rigid_point_9_1_axis]) }{rigid_point_9_1_l1}}
+def rigid_point_9_2_top (10.4,2.1248,2)
+def rigid_point_9_2_axis [3.621,2.1248,-2.724]
+def rigid_point_9_2_p1 (6.7026,0.16117,4.7481)
+def rigid_point_9_2_p2 (10.3236,2.286,2.0241)
+def rigid_point_9_2_l1 line(rigid_point_9_2_p1)(rigid_point_9_2_p2)
+def rigid_point_9_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_9_2_top),[rigid_point_9_2_axis]) }{rigid_point_9_2_l1}}
+def rigid_point_10_loc (12.4,1,2)
+def rigid_point_10_bot (12.4,1,1.75)
+def rigid_point_10 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(rigid_point_10_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(rigid_point_10_loc),[0,1,0])}(rigid_point_10_bot)}
+def rigid_point_10_1_top (12.4,1,2)
+def rigid_point_10_1_axis [1,-0.5624,0]
+def rigid_point_10_1_p1 (11.4882,1.7193,2)
+def rigid_point_10_1_p2 (12.4882,1.1569,2)
+def rigid_point_10_1_l1 line(rigid_point_10_1_p1)(rigid_point_10_1_p2)
+def rigid_point_10_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_10_1_top),[rigid_point_10_1_axis]) }{rigid_point_10_1_l1}}
+def rigid_point_10_2_top (12.4,1,2)
+def rigid_point_10_2_axis [-1.7,0,-0.82]
+def rigid_point_10_2_p1 (14.1,1.18,2.82)
+def rigid_point_10_2_p2 (12.4,1.18,2)
+def rigid_point_10_2_l1 line(rigid_point_10_2_p1)(rigid_point_10_2_p2)
+def rigid_point_10_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_10_2_top),[rigid_point_10_2_axis]) }{rigid_point_10_2_l1}}
+def rigid_point_11_top (10.4,2.25,3)
+def rigid_point_11_axis [0,-0.5,0]
+def rigid_point_11_p1 (10.6,2.75,3)
+def rigid_point_11_p2 (10.6,2.25,3)
+def rigid_point_11_l1 line(rigid_point_11_p1)(rigid_point_11_p2)
+def rigid_point_11 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_11_top),[rigid_point_11_axis]) }{rigid_point_11_l1}}
+def rigid_point_11b_top (10.4,2.5,2.75)
+def rigid_point_11b_axis [0,0,-0.5]
+def rigid_point_11b_p1 (10.4,2.7,3.25)
+def rigid_point_11b_p2 (10.4,2.7,2.75)
+def rigid_point_11b_l1 line(rigid_point_11b_p1)(rigid_point_11b_p2)
+def rigid_point_11b {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_11b_top),[rigid_point_11b_axis]) }{rigid_point_11b_l1}}
+def rigid_point_11_1_top (10.4,2.5,3)
+def rigid_point_11_1_axis [-1,0.75,0]
+def rigid_point_11_1_p1 (11.508,1.894,3)
+def rigid_point_11_1_p2 (10.508,2.644,3)
+def rigid_point_11_1_l1 line(rigid_point_11_1_p1)(rigid_point_11_1_p2)
+def rigid_point_11_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_11_1_top),[rigid_point_11_1_axis]) }{rigid_point_11_1_l1}}
+def rigid_point_11_2_top (10.4,2.5,3)
+def rigid_point_11_2_axis [3.621,2.5,-1.724]
+def rigid_point_11_2_p1 (6.6838,0.15148,4.7437)
+def rigid_point_11_2_p2 (10.3048,2.6515,3.0197)
+def rigid_point_11_2_l1 line(rigid_point_11_2_p1)(rigid_point_11_2_p2)
+def rigid_point_11_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_11_2_top),[rigid_point_11_2_axis]) }{rigid_point_11_2_l1}}
+def rigid_point_12_loc (12.4,1,3)
+def rigid_point_12_bot (12.4,1,2.75)
+def rigid_point_12 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(rigid_point_12_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(rigid_point_12_loc),[0,1,0])}(rigid_point_12_bot)}
+def rigid_point_12_1_top (12.4,1,3)
+def rigid_point_12_1_axis [1,-0.75,0]
+def rigid_point_12_1_p1 (11.508,1.894,3)
+def rigid_point_12_1_p2 (12.508,1.144,3)
+def rigid_point_12_1_l1 line(rigid_point_12_1_p1)(rigid_point_12_1_p2)
+def rigid_point_12_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_12_1_top),[rigid_point_12_1_axis]) }{rigid_point_12_1_l1}}
+def rigid_point_12_2_top (12.4,1,3)
+def rigid_point_12_2_axis [-1.7,0,0.18]
+def rigid_point_12_2_p1 (14.1,1.18,2.82)
+def rigid_point_12_2_p2 (12.4,1.18,3)
+def rigid_point_12_2_l1 line(rigid_point_12_2_p1)(rigid_point_12_2_p2)
+def rigid_point_12_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_12_2_top),[rigid_point_12_2_axis]) }{rigid_point_12_2_l1}}
+def rigid_point_13_top (10.4,-2.3748,2)
+def rigid_point_13_axis [0,-0.5,0]
+def rigid_point_13_p1 (10.6,-1.8748,2)
+def rigid_point_13_p2 (10.6,-2.3748,2)
+def rigid_point_13_l1 line(rigid_point_13_p1)(rigid_point_13_p2)
+def rigid_point_13 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_13_top),[rigid_point_13_axis]) }{rigid_point_13_l1}}
+def rigid_point_13b_top (10.4,-2.1248,1.75)
+def rigid_point_13b_axis [0,0,-0.5]
+def rigid_point_13b_p1 (10.4,-1.9248,2.25)
+def rigid_point_13b_p2 (10.4,-1.9248,1.75)
+def rigid_point_13b_l1 line(rigid_point_13b_p1)(rigid_point_13b_p2)
+def rigid_point_13b {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_13b_top),[rigid_point_13b_axis]) }{rigid_point_13b_l1}}
+def rigid_point_13_1_top (10.4,-2.1248,2)
+def rigid_point_13_1_axis [-1,-0.5624,0]
+def rigid_point_13_1_p1 (11.3118,-1.4055,2)
+def rigid_point_13_1_p2 (10.3118,-1.9679,2)
+def rigid_point_13_1_l1 line(rigid_point_13_1_p1)(rigid_point_13_1_p2)
+def rigid_point_13_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_13_1_top),[rigid_point_13_1_axis]) }{rigid_point_13_1_l1}}
+def rigid_point_13_2_top (10.4,-2.1248,2)
+def rigid_point_13_2_axis [3.621,-2.1248,-2.724]
+def rigid_point_13_2_p1 (6.8554,0.16117,4.6999)
+def rigid_point_13_2_p2 (10.4764,-1.9636,1.9759)
+def rigid_point_13_2_l1 line(rigid_point_13_2_p1)(rigid_point_13_2_p2)
+def rigid_point_13_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_13_2_top),[rigid_point_13_2_axis]) }{rigid_point_13_2_l1}}
+def rigid_point_14_loc (12.4,-1,2)
+def rigid_point_14_bot (12.4,-1,1.75)
+def rigid_point_14 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(rigid_point_14_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(rigid_point_14_loc),[0,1,0])}(rigid_point_14_bot)}
+def rigid_point_14_1_top (12.4,-1,2)
+def rigid_point_14_1_axis [1,0.5624,0]
+def rigid_point_14_1_p1 (11.3118,-1.4055,2)
+def rigid_point_14_1_p2 (12.3118,-0.84311,2)
+def rigid_point_14_1_l1 line(rigid_point_14_1_p1)(rigid_point_14_1_p2)
+def rigid_point_14_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_14_1_top),[rigid_point_14_1_axis]) }{rigid_point_14_1_l1}}
+def rigid_point_14_2_top (12.4,-1,2)
+def rigid_point_14_2_axis [-1.7,0,-0.82]
+def rigid_point_14_2_p1 (14.1,-0.82,2.82)
+def rigid_point_14_2_p2 (12.4,-0.82,2)
+def rigid_point_14_2_l1 line(rigid_point_14_2_p1)(rigid_point_14_2_p2)
+def rigid_point_14_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_14_2_top),[rigid_point_14_2_axis]) }{rigid_point_14_2_l1}}
+def rigid_point_15_top (10.4,-2.75,3)
+def rigid_point_15_axis [0,-0.5,0]
+def rigid_point_15_p1 (10.6,-2.25,3)
+def rigid_point_15_p2 (10.6,-2.75,3)
+def rigid_point_15_l1 line(rigid_point_15_p1)(rigid_point_15_p2)
+def rigid_point_15 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_15_top),[rigid_point_15_axis]) }{rigid_point_15_l1}}
+def rigid_point_15b_top (10.4,-2.5,2.75)
+def rigid_point_15b_axis [0,0,-0.5]
+def rigid_point_15b_p1 (10.4,-2.3,3.25)
+def rigid_point_15b_p2 (10.4,-2.3,2.75)
+def rigid_point_15b_l1 line(rigid_point_15b_p1)(rigid_point_15b_p2)
+def rigid_point_15b {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_15b_top),[rigid_point_15b_axis]) }{rigid_point_15b_l1}}
+def rigid_point_15_1_top (10.4,-2.5,3)
+def rigid_point_15_1_axis [-1,-0.75,0]
+def rigid_point_15_1_p1 (11.292,-1.606,3)
+def rigid_point_15_1_p2 (10.292,-2.356,3)
+def rigid_point_15_1_l1 line(rigid_point_15_1_p1)(rigid_point_15_1_p2)
+def rigid_point_15_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_15_1_top),[rigid_point_15_1_axis]) }{rigid_point_15_1_l1}}
+def rigid_point_15_2_top (10.4,-2.5,3)
+def rigid_point_15_2_axis [3.621,-2.5,-1.724]
+def rigid_point_15_2_p1 (6.8742,0.15148,4.7043)
+def rigid_point_15_2_p2 (10.4952,-2.3485,2.9803)
+def rigid_point_15_2_l1 line(rigid_point_15_2_p1)(rigid_point_15_2_p2)
+def rigid_point_15_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_15_2_top),[rigid_point_15_2_axis]) }{rigid_point_15_2_l1}}
+def rigid_point_16_loc (12.4,-1,3)
+def rigid_point_16_bot (12.4,-1,2.75)
+def rigid_point_16 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(rigid_point_16_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(rigid_point_16_loc),[0,1,0])}(rigid_point_16_bot)}
+def rigid_point_16_1_top (12.4,-1,3)
+def rigid_point_16_1_axis [1,0.75,0]
+def rigid_point_16_1_p1 (11.292,-1.606,3)
+def rigid_point_16_1_p2 (12.292,-0.856,3)
+def rigid_point_16_1_l1 line(rigid_point_16_1_p1)(rigid_point_16_1_p2)
+def rigid_point_16_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_16_1_top),[rigid_point_16_1_axis]) }{rigid_point_16_1_l1}}
+def rigid_point_16_2_top (12.4,-1,3)
+def rigid_point_16_2_axis [-1.7,0,0.18]
+def rigid_point_16_2_p1 (14.1,-0.82,2.82)
+def rigid_point_16_2_p2 (12.4,-0.82,3)
+def rigid_point_16_2_l1 line(rigid_point_16_2_p1)(rigid_point_16_2_p2)
+def rigid_point_16_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_16_2_top),[rigid_point_16_2_axis]) }{rigid_point_16_2_l1}}
+def rigid_point_17_top (11.7518,0,7.4764)
+def rigid_point_17_axis [0.22361,0,-0.44721]
+def rigid_point_17_p1 (11.5282,0.2,7.9236)
+def rigid_point_17_p2 (11.7518,0.2,7.4764)
+def rigid_point_17_l1 line(rigid_point_17_p1)(rigid_point_17_p2)
+def rigid_point_17 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_17_top),[rigid_point_17_axis]) }{rigid_point_17_l1}}
+def rigid_point_17_1_top (11.64,0,7.7)
+def rigid_point_17_1_axis [-0.5607,0,1.0976]
+def rigid_point_17_1_p1 (12.2007,0.18,6.6024)
+def rigid_point_17_1_p2 (11.64,0.18,7.7)
+def rigid_point_17_1_l1 line(rigid_point_17_1_p1)(rigid_point_17_1_p2)
+def rigid_point_17_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_17_1_top),[rigid_point_17_1_axis]) }{rigid_point_17_1_l1}}
+def rigid_point_18_top (12.5378,0,5.393)
+def rigid_point_18_axis [-0.44721,0,-0.22361]
+def rigid_point_18_p1 (12.985,0.2,5.6166)
+def rigid_point_18_p2 (12.5378,0.2,5.393)
+def rigid_point_18_l1 line(rigid_point_18_p1)(rigid_point_18_p2)
+def rigid_point_18 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_18_top),[rigid_point_18_axis]) }{rigid_point_18_l1}}
+def rigid_point_18b_top (12.7614,-0.25,5.5048)
+def rigid_point_18b_axis [0,-0.5,0]
+def rigid_point_18b_p1 (12.9614,0.25,5.5048)
+def rigid_point_18b_p2 (12.9614,-0.25,5.5048)
+def rigid_point_18b_l1 line(rigid_point_18b_p1)(rigid_point_18b_p2)
+def rigid_point_18b {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_18b_top),[rigid_point_18b_axis]) }{rigid_point_18b_l1}}
+def rigid_point_18_2_top (12.7614,0,5.5048)
+def rigid_point_18_2_axis [0.5607,0,-1.0976]
+def rigid_point_18_2_p1 (12.2007,0.18,6.6024)
+def rigid_point_18_2_p2 (12.7614,0.18,5.5048)
+def rigid_point_18_2_l1 line(rigid_point_18_2_p1)(rigid_point_18_2_p2)
+def rigid_point_18_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_18_2_top),[rigid_point_18_2_axis]) }{rigid_point_18_2_l1}}
+def rigid_point_19_loc (14.1,0,2.82)
+def rigid_point_19_bot (14.1,0,2.57)
+def rigid_point_19 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(rigid_point_19_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(rigid_point_19_loc),[0,1,0])}(rigid_point_19_bot)}
+def rigid_point_19_1_top (14.1,0,2.82)
+def rigid_point_19_1_axis [0,1,0]
+def rigid_point_19_1_p1 (13.92,-1,2.82)
+def rigid_point_19_1_p2 (13.92,0,2.82)
+def rigid_point_19_1_l1 line(rigid_point_19_1_p1)(rigid_point_19_1_p2)
+def rigid_point_19_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_19_1_top),[rigid_point_19_1_axis]) }{rigid_point_19_1_l1}}
+def rigid_point_19_2_top (14.1,0,2.82)
+def rigid_point_19_2_axis [0.45,0,-0.42]
+def rigid_point_19_2_p1 (13.65,0.18,3.24)
+def rigid_point_19_2_p2 (14.1,0.18,2.82)
+def rigid_point_19_2_l1 line(rigid_point_19_2_p1)(rigid_point_19_2_p2)
+def rigid_point_19_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_19_2_top),[rigid_point_19_2_axis]) }{rigid_point_19_2_l1}}
+def rigid_point_20_loc (14.1,0,2.82)
+def rigid_point_20_bot (14.1,0,2.57)
+def rigid_point_20 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(rigid_point_20_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(rigid_point_20_loc),[0,1,0])}(rigid_point_20_bot)}
+def rigid_point_20_1_top (14.1,0,2.82)
+def rigid_point_20_1_axis [0,-1,0]
+def rigid_point_20_1_p1 (14.28,1,2.82)
+def rigid_point_20_1_p2 (14.28,0,2.82)
+def rigid_point_20_1_l1 line(rigid_point_20_1_p1)(rigid_point_20_1_p2)
+def rigid_point_20_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_20_1_top),[rigid_point_20_1_axis]) }{rigid_point_20_1_l1}}
+def rigid_point_20_2_top (14.1,0,2.82)
+def rigid_point_20_2_axis [0.45,0,-0.42]
+def rigid_point_20_2_p1 (13.65,0.18,3.24)
+def rigid_point_20_2_p2 (14.1,0.18,2.82)
+def rigid_point_20_2_l1 line(rigid_point_20_2_p1)(rigid_point_20_2_p2)
+def rigid_point_20_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(rigid_point_20_2_top),[rigid_point_20_2_axis]) }{rigid_point_20_2_l1}}
+def spring_t_1_loc (4.87,0,4.888)
+def spring_t_1_bot (4.87,0,4.588)
+def spring_t_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(spring_t_1_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(spring_t_1_loc),[0,1,0])}(spring_t_1_bot)}
+def spring_b_1_loc (4.443,0,1.782)
+def spring_b_1_bot (4.443,0,1.482)
+def spring_b_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(spring_b_1_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(spring_b_1_loc),[0,1,0])}(spring_b_1_bot)}
+def spring_i_1_top (4.4839,0,2.0792)
+def spring_i_1_axis [-0.23669,0,-1.7217]
+def spring_i_1_p1 (4.7206,0.375,3.8009)
+def spring_i_1_p2 (4.4839,0.375,2.0792)
+def spring_i_1_l1 line(spring_i_1_p1)(spring_i_1_p2)
+def spring_i_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(spring_i_1_top),[spring_i_1_axis]) }{spring_i_1_l1}}
+def spring_o_1_top (4.5924,0,2.8691)
+def spring_o_1_axis [-0.23669,0,-1.7217]
+def spring_o_1_p1 (4.8291,0.45,4.5908)
+def spring_o_1_p2 (4.5924,0.45,2.8691)
+def spring_o_1_l1 line(spring_o_1_p1)(spring_o_1_p2)
+def spring_o_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(spring_o_1_top),[spring_o_1_axis]) }{spring_o_1_l1}}
+def spring_1_1_top (4.87,0,4.888)
+def spring_1_1_axis [-1.909,0,0.164]
+def spring_1_1_p1 (6.779,0.18,4.724)
+def spring_1_1_p2 (4.87,0.18,4.888)
+def spring_1_1_l1 line(spring_1_1_p1)(spring_1_1_p2)
+def spring_1_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(spring_1_1_top),[spring_1_1_axis]) }{spring_1_1_l1}}
+def spring_1_2_top (4.443,0,1.782)
+def spring_1_2_axis [-0.48333,0,0.054667]
+def spring_1_2_p1 (4.9263,0.18,1.7273)
+def spring_1_2_p2 (4.443,0.18,1.782)
+def spring_1_2_l1 line(spring_1_2_p1)(spring_1_2_p2)
+def spring_1_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(spring_1_2_top),[spring_1_2_axis]) }{spring_1_2_l1}}
+def spring_t_2_loc (12.06,-1,7.14)
+def spring_t_2_bot (12.06,-1,6.84)
+def spring_t_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(spring_t_2_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(spring_t_2_loc),[0,1,0])}(spring_t_2_bot)}
+def spring_b_2_loc (12.7614,-1,5.5048)
+def spring_b_2_bot (12.7614,-1,5.2048)
+def spring_b_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(spring_b_2_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(spring_b_2_loc),[0,1,0])}(spring_b_2_bot)}
+def spring_i_2_top (12.6431,-1,5.7805)
+def spring_i_2_axis [0.33765,0,-0.78717]
+def spring_i_2_p1 (12.3055,-0.625,6.5677)
+def spring_i_2_p2 (12.6431,-0.625,5.7805)
+def spring_i_2_l1 line(spring_i_2_p1)(spring_i_2_p2)
+def spring_i_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(spring_i_2_top),[spring_i_2_axis]) }{spring_i_2_l1}}
+def spring_o_2_top (12.5159,-1,6.0771)
+def spring_o_2_axis [0.33765,0,-0.78717]
+def spring_o_2_p1 (12.1783,-0.55,6.8643)
+def spring_o_2_p2 (12.5159,-0.55,6.0771)
+def spring_o_2_l1 line(spring_o_2_p1)(spring_o_2_p2)
+def spring_o_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(spring_o_2_top),[spring_o_2_axis]) }{spring_o_2_l1}}
+def spring_2_1_top (12.06,-1,7.14)
+def spring_2_1_axis [0.42,-1,-0.56]
+def spring_2_1_p1 (11.7875,0.09012,7.6497)
+def spring_2_1_p2 (12.2075,-0.90988,7.0897)
+def spring_2_1_l1 line(spring_2_1_p1)(spring_2_1_p2)
+def spring_2_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(spring_2_1_top),[spring_2_1_axis]) }{spring_2_1_l1}}
+def spring_2_2_top (12.7614,-1,5.5048)
+def spring_2_2_axis [0,-1,0]
+def spring_2_2_p1 (12.9414,0,5.5048)
+def spring_2_2_p2 (12.9414,-1,5.5048)
+def spring_2_2_l1 line(spring_2_2_p1)(spring_2_2_p2)
+def spring_2_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(spring_2_2_top),[spring_2_2_axis]) }{spring_2_2_l1}}
+def spring_t_3_loc (12.06,1,7.14)
+def spring_t_3_bot (12.06,1,6.84)
+def spring_t_3 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(spring_t_3_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(spring_t_3_loc),[0,1,0])}(spring_t_3_bot)}
+def spring_b_3_loc (12.7614,1,5.5048)
+def spring_b_3_bot (12.7614,1,5.2048)
+def spring_b_3 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(spring_b_3_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(spring_b_3_loc),[0,1,0])}(spring_b_3_bot)}
+def spring_i_3_top (12.6431,1,5.7805)
+def spring_i_3_axis [0.33765,0,-0.78717]
+def spring_i_3_p1 (12.3055,1.375,6.5677)
+def spring_i_3_p2 (12.6431,1.375,5.7805)
+def spring_i_3_l1 line(spring_i_3_p1)(spring_i_3_p2)
+def spring_i_3 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(spring_i_3_top),[spring_i_3_axis]) }{spring_i_3_l1}}
+def spring_o_3_top (12.5159,1,6.0771)
+def spring_o_3_axis [0.33765,0,-0.78717]
+def spring_o_3_p1 (12.1783,1.45,6.8643)
+def spring_o_3_p2 (12.5159,1.45,6.0771)
+def spring_o_3_l1 line(spring_o_3_p1)(spring_o_3_p2)
+def spring_o_3 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(spring_o_3_top),[spring_o_3_axis]) }{spring_o_3_l1}}
+def spring_3_1_top (12.06,1,7.14)
+def spring_3_1_axis [0.42,1,-0.56]
+def spring_3_1_p1 (11.4925,0.09012,7.7503)
+def spring_3_1_p2 (11.9125,1.0901,7.1903)
+def spring_3_1_l1 line(spring_3_1_p1)(spring_3_1_p2)
+def spring_3_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(spring_3_1_top),[spring_3_1_axis]) }{spring_3_1_l1}}
+def spring_3_2_top (12.7614,1,5.5048)
+def spring_3_2_axis [0,1,0]
+def spring_3_2_p1 (12.5814,0,5.5048)
+def spring_3_2_p2 (12.5814,1,5.5048)
+def spring_3_2_l1 line(spring_3_2_p1)(spring_3_2_p2)
+def spring_3_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(spring_3_2_top),[spring_3_2_axis]) }{spring_3_2_l1}}
+def link_1_top (3.722,0,2.748)
+def link_1_axis [-1.224,0,1.226]
+def link_1_p1 (4.946,0.1,1.522)
+def link_1_p2 (3.722,0.1,2.748)
+def link_1_l1 line(link_1_p1)(link_1_p2)
+def link_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(link_1_top),[link_1_axis]) }{link_1_l1}}
+def link_t_1_loc (3.722,0,2.748)
+def link_t_1_bot (3.722,0,2.548)
+def link_t_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(link_t_1_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(link_t_1_loc),[0,1,0])}(link_t_1_bot)}
+def link_b_1_loc (4.946,0,1.522)
+def link_b_1_bot (4.946,0,1.322)
+def link_b_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_sphere_segs,rotate(360/n_sphere_segs,(link_b_1_loc))} sweep {n_sphere_segs,rotate(180/n_sphere_segs,(link_b_1_loc),[0,1,0])}(link_b_1_bot)}
+def link_1_1_top (3.722,0,2.748)
+def link_1_1_axis [1.762,0,-0.365]
+def link_1_1_p1 (1.96,0.18,3.113)
+def link_1_1_p2 (3.722,0.18,2.748)
+def link_1_1_l1 line(link_1_1_p1)(link_1_1_p2)
+def link_1_1 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(link_1_1_top),[link_1_1_axis]) }{link_1_1_l1}}
+def link_1_2_top (4.946,0,1.522)
+def link_1_2_axis [0.019667,0,-0.20533]
+def link_1_2_p1 (4.9263,0.18,1.7273)
+def link_1_2_p2 (4.946,0.18,1.522)
+def link_1_2_l1 line(link_1_2_p1)(link_1_2_p2)
+def link_1_2 {sweep[cull=false,fill opacity=0.8,fill=gray!20]{n_cyl_segs<>,rotate(360/n_cyl_segs,(link_1_2_top),[link_1_2_axis]) }{link_1_2_l1}}
+def system{{body_1} {body_2} {body_3} {body_4} {body_5} {body_6} {body_7} {body_8} {body_9} {body_10} {body_11} {body_12} {body_13} {body_14} {body_15} {body_16} {flex_point_1} {flex_point_2} {flex_point_3} {flex_point_4} {flex_point_5} {flex_point_6} {rigid_point_1} {rigid_point_1_1} {rigid_point_2} {rigid_point_2_1} {rigid_point_2_2} {rigid_point_3} {rigid_point_3_1} {rigid_point_3_2} {rigid_point_4} {rigid_point_4_1} {rigid_point_4_2} {rigid_point_5} {rigid_point_5_1} {rigid_point_5_2} {rigid_point_6} {rigid_point_6_1} {rigid_point_7} {rigid_point_7_1} {rigid_point_7_2} {rigid_point_8} {rigid_point_8_1} {rigid_point_8_2} {rigid_point_9} {rigid_point_9b} {rigid_point_9_1} {rigid_point_9_2} {rigid_point_10} {rigid_point_10_1} {rigid_point_10_2} {rigid_point_11} {rigid_point_11b} {rigid_point_11_1} {rigid_point_11_2} {rigid_point_12} {rigid_point_12_1} {rigid_point_12_2} {rigid_point_13} {rigid_point_13b} {rigid_point_13_1} {rigid_point_13_2} {rigid_point_14} {rigid_point_14_1} {rigid_point_14_2} {rigid_point_15} {rigid_point_15b} {rigid_point_15_1} {rigid_point_15_2} {rigid_point_16} {rigid_point_16_1} {rigid_point_16_2} {rigid_point_17} {rigid_point_17_1} {rigid_point_18} {rigid_point_18b} {rigid_point_18_2} {rigid_point_19} {rigid_point_19_1} {rigid_point_19_2} {rigid_point_20} {rigid_point_20_1} {rigid_point_20_2} {spring_t_1} {spring_b_1} {spring_i_1} {spring_o_1} {spring_1_1} {spring_1_2} {spring_t_2} {spring_b_2} {spring_i_2} {spring_o_2} {spring_2_1} {spring_2_2} {spring_t_3} {spring_b_3} {spring_i_3} {spring_o_3} {spring_3_1} {spring_3_2} {link_1} {link_t_1} {link_b_1} {link_1_1} {link_1_2} }
+put {scale(0.75) then view((1,2,0.5),(0,0,0),[0,0,1])}{system}
+global {language tikz }

@@ -1,0 +1,127 @@
+\chapter{Analysis}
+Replace this text with the body of your report.  Add sections or subsections as appropriate.
+\section{Eigenvalue Analysis}
+The eigenvalue properties are given in Tables~\ref{evals}~and~\ref{evals-b}.
+
+\begin{table}[ht]
+\begin{center}
+\begin{threeparttable}
+\begin{footnotesize}
+\caption{Eigenvalues}
+\label{evals}
+\pgfplotstabletypeset[columns={num,real,imag,realhz,imaghz}]{eigen_2015-09-15.out}
+\begin{tablenotes}
+\item Note: oscillatory roots appear as complex conjugates.
+\end{tablenotes}
+\end{footnotesize}
+\end{threeparttable}
+\end{center}
+\end{table}
+\begin{table}[ht]
+\begin{center}
+\begin{threeparttable}
+\begin{footnotesize}
+\caption{Eigenvalue Analysis}
+\label{evals-b}
+\pgfplotstabletypeset[columns={num,nfreq,zeta,tau,lambda}]{freq_2015-09-15.out}
+\begin{tablenotes}
+\item Notes: a) oscillatory roots are listed twice, b) negative time constants denote unstable roots.
+\end{tablenotes}
+\end{footnotesize}
+\end{threeparttable}
+\end{center}
+\end{table}
+There are 7 oscillatory modes, 7 damped modes, 0 unstable modes, and 2 rigid body modes.
+\pagebreak
+\section{Frequency Response Plots}
+\begin{figure}[hbtp]
+\begin{center}
+\begin{footnotesize}
+\begin{tikzpicture}
+\begin{semilogxaxis}[height=2in,width=5in,ymin=-60,tick style={thin,black},extra y ticks={0},extra y tick style={grid=major},major y grid style={dotted,black},xlabel={Frequency [Hz]},ylabel={Transfer Function [dB]},enlarge x limits=false,legend style={at={(1.0,1.03)},anchor=south east},legend columns=1,cycle list name=linestyles*]
+\addplot+[black,line width=1pt,mark=none] table[x=frequency,y=m1]{bode_2015-09-15.out};
+\addlegendentry{sensor/actuator}
+\addplot+[black,line width=1pt,mark=none] table[x=frequency,y=m2]{bode_2015-09-15.out};
+\addlegendentry{twist sensor/actuator}
+\end{semilogxaxis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\begin{semilogxaxis}[height=2in,width=5in,tick style={thin,black},extra y ticks={0},extra y tick style={grid=major},major y grid style={dotted,black},xlabel={Frequency [Hz]},ylabel={Phase Angle  [$^\circ$]},enlargelimits=false,cycle list name=linestyles*,restrict y to domain= -180:180,unbounded coords=jump]
+\addplot+[black,line width=1pt,mark=none] table[x=frequency,y=p1]{bode_2015-09-15.out};
+\addplot+[black,line width=1pt,mark=none] table[x=frequency,y=p2]{bode_2015-09-15.out};
+\end{semilogxaxis}
+\end{tikzpicture}
+\end{footnotesize}
+\caption{Frequency response: actuator}
+\label{bode_plot_1}
+\end{center}
+\end{figure}
+
+\begin{figure}[hbtp]
+\begin{center}
+\begin{footnotesize}
+\begin{tikzpicture}
+\begin{semilogxaxis}[height=2in,width=5in,ymin=-60,tick style={thin,black},extra y ticks={0},extra y tick style={grid=major},major y grid style={dotted,black},xlabel={Frequency [Hz]},ylabel={Transfer Function [dB]},enlarge x limits=false,legend style={at={(1.0,1.03)},anchor=south east},legend columns=1,cycle list name=linestyles*]
+\addplot+[black,line width=1pt,mark=none] table[x=frequency,y=m3]{bode_2015-09-15.out};
+\addlegendentry{sensor/twist actuator}
+\addplot+[black,line width=1pt,mark=none] table[x=frequency,y=m4]{bode_2015-09-15.out};
+\addlegendentry{twist sensor/twist actuator}
+\end{semilogxaxis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\begin{semilogxaxis}[height=2in,width=5in,tick style={thin,black},extra y ticks={0},extra y tick style={grid=major},major y grid style={dotted,black},xlabel={Frequency [Hz]},ylabel={Phase Angle  [$^\circ$]},enlargelimits=false,cycle list name=linestyles*,restrict y to domain= -180:180,unbounded coords=jump]
+\addplot+[black,line width=1pt,mark=none] table[x=frequency,y=p3]{bode_2015-09-15.out};
+\addplot+[black,line width=1pt,mark=none] table[x=frequency,y=p4]{bode_2015-09-15.out};
+\end{semilogxaxis}
+\end{tikzpicture}
+\end{footnotesize}
+\caption{Frequency response: twist actuator}
+\label{bode_plot_2}
+\end{center}
+\end{figure}
+
+\clearpage
+
+\section{Steady State Gains}
+The steady state gains are given in Table~\ref{sstf}.
+\begin{table}[ht]
+\begin{center}
+\begin{threeparttable}
+\begin{footnotesize}
+\caption{Steady State Gains}
+\label{sstf}
+\pgfplotstabletypeset[columns/{Output/Input}/.style={string type},columns/Gain/.style={sci, sci zerofill, precision=4, dec sep align}]{sstf_2015-09-15.out}
+\end{footnotesize}
+\end{threeparttable}
+\end{center}
+\end{table}
+\section{Equilibrium Analysis}
+The results of the equlibrium load analysis are given in Tables~\ref{deflns}~and~\ref{preloads}.
+\begin{table}[ht]
+\begin{center}
+\begin{threeparttable}
+\begin{footnotesize}
+\caption{System Static Deflections}
+\label{deflns}
+\pgfplotstabletypeset[
+every head row/.style={output empty row, before row={\toprule No. & Body Name & Type &
+\multicolumn{6}{c}{Deflection [m] or [rad]}\\},
+after row=\midrule}, columns={num,name,type,x,y,z}]{defln_2015-09-15.out}
+\end{footnotesize}
+\end{threeparttable}
+\end{center}
+\end{table}
+\begin{table}[ht]
+\begin{center}
+\begin{threeparttable}
+\begin{footnotesize}
+\caption{System Preloads}
+\label{preloads}
+\pgfplotstabletypeset[
+every head row/.style={output empty row, before row={\toprule No. & Connector Name & Type &
+\multicolumn{8}{c}{Load [N] or [Nm] (Components; Magnitude)}\\},
+after row=\midrule}, columns={num,name,type,fx,fy,fz,fxyz}]{preload_2015-09-15.out}
+\end{footnotesize}
+\end{threeparttable}
+\end{center}
+\end{table}

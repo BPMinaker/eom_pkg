@@ -1,0 +1,44 @@
+function [offset,theta]=track_offset(pos,rot_mtx,track)
+
+persistent idx;
+
+if(isempty(idx))
+     idx=1;
+end
+tracklen=size(track,1);
+
+
+d_last=norm(track(idx,:)-pos');  %% Find distance to last point
+
+%% Find closest point by looking ahead
+d_next=d_last;  %% Choose to make loop eval at least once
+nidx=idx;  %% Start looking at current idx
+while(d_next<=d_last && nidx<tracklen-1)
+	d_last=d_next;
+	nidx=nidx+1;
+	d_next=norm(track(nidx,:)-pos');  %% If the next point is closer than the last, keep looking forward
+end
+
+del=nidx-1-idx;  %% Number of points we move forward
+idx=nidx-1;  %% If the last nidx broke the loop, it was one step too far forward, but reset idx
+
+%% Now check behind also
+if(idx>1 && del==0)
+	d_next=d_last;  %% Choose to make loop eval once
+	nidx=idx;
+	while(d_next<=d_last && nidx>1)
+		d_last=d_next;
+		nidx=nidx-1;
+		d_next=norm(track(nidx,:)-pos');  %% If the next point is closer than the last, keep looking forward
+	end
+	idx=nidx+1;  %% If the last nidx broke the loop, it was one step too far back, but reset idx
+end
+
+trgt=rot_mtx*(track(idx,:)'-pos);  %% Orient closest point in moving frame
+trgt2=rot_mtx*(track(idx+1,:)'-pos);  %% Orient next closest point in moving frame
+offset=interp1([trgt(1);trgt2(1)],[trgt(2);trgt2(2)],0,'linear','extrap');
+
+temp=trgt2-trgt;
+theta=atan2(temp(2),temp(1));
+
+end

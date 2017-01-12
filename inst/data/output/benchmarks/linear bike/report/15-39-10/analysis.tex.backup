@@ -1,0 +1,16 @@
+\chapter{Analysis}
+Replace this text with the body of your report.  Add sections or subsections as appropriate.
+\section{Eigenvalue Plot}
+\begin{figure}[htbp]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[height=3in,width=5in,xmin=0,restrict y to domain=-25:100000,restrict expr to domain={abs(y)}{0.001:100000},xlabel={Speed [m/s]},ylabel={Eigenvalue [1/s]},tick style={thin,black},extra y ticks={0},extra y tick style={grid=major},major y grid style={dotted,black},enlarge x limits=false,legend style={at={(1.0,1.03)},anchor=south east},legend columns=-1]
+\addplot+[only marks,mark=*,mark options={black,scale=0.6,line width=1pt}] table[x=speed,y=real]{eigen.out};
+\addplot+[only marks,mark=*,mark options={black,fill=white,scale=1,line width=0.5pt}] table[x=speed,y=imag]{eigen.out};
+\legend{Real, Imaginary}
+\end{axis}
+\end{tikzpicture}
+\caption{Eigenvalues vs. Speed}
+\label{eigen_plot}
+\end{center}
+\end{figure}

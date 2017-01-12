@@ -1,0 +1,66 @@
+\chapter{Equations of Motion}
+The equations of motion are prepared in first order form.
+\[
+\begin{bmatrix}
+{\mathbf I} & {\bm 0} & {\bm 0} \\ {\bm 0} & {\mathbf M} & -{\mathbf G} \\ {\bm 0} & {\bm 0} & {\bm 0}
+\end{bmatrix}
+\begin{Bmatrix}
+\dot{\bm p}\\ \dot{\bm w} \\ \dot{\bm u}
+\end{Bmatrix}
++\begin{bmatrix}
+{\mathbf V} & -{\mathbf I} & {\bm 0} \\ {\mathbf K} & {\mathbf L} & -{\mathbf F} \\ {\bm 0} & {\bm 0} & {\mathbf I}
+\end{bmatrix}
+\begin{Bmatrix}
+{\bm p}\\ {\bm w}\\ {\bm u}
+\end{Bmatrix}
+=\begin{bmatrix}
+{\bm 0}\\ {\bm 0}\\ {\mathbf I}
+\end{bmatrix}
+\begin{Bmatrix}
+{\bm u}
+\end{Bmatrix}
+\]
+
+The state vector consists of six global position coordinates for each body~${\bm p}$, and six body fixed velocity coordinates~${\bm w}$ for each body.  The input vector~${\bm u}$ is appended to the state.  The first rows of the system are the linearized kinematic differential equations.  The matrix $V$ is determined only by the velocity around which the linearization occurs.  The second row 
+
+The matrix $M$ represents the mass and inertia terms, the matrix $G$ allows the inclusion of systems that have dependency on the rate of input. 
+
+
+The system is subject to constraints.
+
+\[
+\begin{bmatrix}
+\mathbf{J}_\textrm{h} & {\bm 0} & {\bm 0}\\-{\mathbf J}_\textrm{h}{\mathbf V} & {\mathbf J}_\textrm{h} & {\bm 0}\\ {\bm 0} & {\mathbf J}_\textrm{nh} & {\bm 0}
+\end{bmatrix}
+\begin{bmatrix}
+\dot{\bm p} & {\bm p} \\ \dot{\bm w} & {\bm w} \\ \dot{\bm u} & {\bm u}
+\end{bmatrix}
+=\begin{bmatrix}
+{\bm 0} & {\bm 0}\\{\bm 0} & {\bm 0}\\{\bm 0} & {\bm 0}
+\end{bmatrix}
+\]
+
+
+
+
+
+
+
+
+
+
+The full state space equations:
+\[
+\begin{bmatrix}
+{\mathbf E} & {\bm 0} \\ {\bm 0} & {\mathbf I}
+\end{bmatrix}
+\begin{Bmatrix}
+\dot{\bm x}\\ {\bm y}
+\end{Bmatrix}
+=\begin{bmatrix}
+\mathbf{A} & \mathbf{B} \\ \mathbf{C} & \mathbf{D}
+\end{bmatrix}
+\begin{Bmatrix}
+{\bm x}\\ {\bm u}\end{Bmatrix}
+\]
+

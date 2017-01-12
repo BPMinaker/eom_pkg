@@ -1,0 +1,14 @@
+
+2.40e-11
+
+7.5
+
+Intel Core i7-2600 @ 3.4 Ghz
+
+Arch Linux 64 bit
+
+Results are obtained from the open source multibody equations of motion generator software EoM, developed by the University of Windsor Vehicle Dynamics and Control Research Group.  EoM is a general purpose linear multibody code, not a bespoke solution for the given benchmark problem, written in Matlab, with current results obtained on R2016a.
+
+EoM first combines the unconstrained linearized equations of motion in physical coordinates (six per body) with the linearized kinematic differential equations, resulting in a first order form.  As the positions and velocities are initially independent states, the constraint equations are applied to both. The null space of the linearized constraint equations is then used to reduce this first order set to a smaller set of coordinates.  More detail is provided in the attached report.
+
+Note that EoM does not conduct a search for equilibrium, so the accuracy figure given is based on the equilibrium coordinate provided with the benchmark, given to 12 digits, and a comparison to the corresponding eigenvalues, also given to 12 digits.  The significantly larger overhead in terms of CPU time is believed to be a result of the general purpose nature of the EoM code.  
