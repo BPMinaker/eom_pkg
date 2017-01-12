@@ -1,0 +1,85 @@
+2013/09/12
+Some more big improvements.  Now code uses descriptor DAE first order form.
+This means you can have zero masses and infinite eigenvalues.  Plus some
+changes to try to enable parallel computing.  Seems models are not big enough,
+not time consuming enough to make it worthwhile.  Planning to try some bigger
+models soon to see if it helps.  Trying a new approach to solving the static
+problem for the preloads, using singular value decomposition.  Should show some
+small speed improvements, and fix a problem with Matlab and Octave returning
+different results.  By default, Octave always gives minimum norm, Matlab
+doesn't.  Fixed a bug with the triangle elements.
+
+2013/06/23
+Code is now pretty reliable for doing most of the standard linear vehicle
+models, e.g., quarter, half, full car ride model, yaw plane with or w/o
+trailer, rigid rider bicycle, etc.  Function call has a few neat options
+to allow passing parameters, or looping for a range of values.  Big
+improvements in the implementation of the tangent stifness.  Octave-forge
+control toolbox now largely Matlab compatible, seems to work well.
+
+2012/12/20
+Still working on tangent stiffness, but theory is growing nicely.  Abandoned
+octave-forge code for animations.  Worked for octave, but Matlab had issues.
+
+2012/01/6
+Another four years.  Steady development over last interval, not really much
+change in fundamentals, but code restructring, and small features.  Close to
+sorting the tangent stiffness terms out for systems with preloads in the
+constraints when in equilibrium.  Trying to leverage octave-forge code for
+control and animation routines.
+
+2008/12/12
+Another year.  Lots more progress.  The way that the equations of motion
+are formatted has changed with the advantage that we can now handle
+systems like the yaw plane truck and trailer, the rolling coin, and a bicycle.
+Plus using latex output.  Have had a couple students messing around, that
+helps to sort out the bugs.  Removed inflation parameter, and also the fixed
+motion inputs, but added sensors and servos.
+
+2008/01/28
+More progress.  The input format has changed several times but I think is
+starting to settle down.  Added 'inflation' option to springs, makes system
+third order, but all seems okay.  Rob has added an output to dot so we
+can see schematic drawings as well.
+
+2007/07/28
+Another whole year.  Amazing.  Just finished getting beam springs implemented.
+Pretty sure they work okay, but are still massless.  System can now handle
+moving constraints to enforce motion, but only if the moving point is fixed on
+one body and moves relative to ground.  Now with some inputs, decided to
+generate the frequency response as well as eigen analysis.  Working on getting
+everything to be compatible with Matlab.  And still have to sort out torsional
+geometric stiffness matrix.  Also implemented modular input file system,
+you name the fields and give the value.  Seems like the syntax is a bit clumsy
+but should allow for more flexibility.
+
+2006/04/11
+Still working on torsional springs/constraints.  They are implemented in the
+code but I'm getting some odd results that I'm not sure I understand.  Use
+with caution!
+
+2006/02/08
+A whole year has passed since my last update.  Wow.  The package continues
+to progress.  The constraint library is very generic now.  You can model up to
+16 different types of point constraints, or more if you combine them.  Also
+many different variations of the point spring/damper.  No bending or shear
+springs yet, but torsional line springs are close.  The xml functions in
+octave-forge are buggy under Linux, so I had to resort to the (much bigger)
+hdf5 format for now.  The input files can be generated using a seperate script.
+No real documentation as of yet.  See the example for now.  Output is now in
+the form of x3d animated mode shapes.  Cool.
+
+2005/01/15
+This set of routines is designed to run under the Octave numerical computing
+package.  It now requires that Octave-forge be installed, as it makes uses of
+the xml capabilities there.  To run, just execute eom.m.  You may need to
+edit the first line to point to your Octave executable.
+
+Currently, you can analyze rigid bodies with pin or ball joints, and or rigid
+links, and point or directed springs.  I'm hoping to add the capability to
+handle flexible beam soon.  Then, I'd like to see if there's any way the code
+could be made more modular, to allow easier addition of new joints
+(constraints) or other finite element type bodies.
+
+B.Minaker, bminaker at uwindsor dot ca
+
