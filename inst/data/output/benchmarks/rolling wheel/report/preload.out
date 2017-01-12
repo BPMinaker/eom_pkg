@@ -1,4 +1,0 @@
-%%% Preload
-num name type fx fy fz fxyz 
-{1} {Tire} force 0.00000000e+00 0.00000000e+00 9.81000000e+00 9.81000000e+00
-{2} {Table joint} force 0.00000000e+00 0.00000000e+00 1.96200000e+01 1.96200000e+01

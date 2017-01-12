@@ -1,6 +1,0 @@
-%%% Steady State Transfer Function
-{Output/Input} Gain 
-{sensor/actuator} 2.57495730e-01
-{sensor/twist actuator} -1.10000000e-07
-{twist sensor/actuator} -8.74451890e-01
-{twist sensor/twist actuator} 5.05791090e-01

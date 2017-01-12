@@ -1,4 +1,0 @@
-%%% Steady State Transfer Function
-num outputtoinput gain
-{1} {yaw rate/steer torque} -3.66400800e-02
-{2} {roll angle/steer torque} -4.66576500e-02

@@ -1,6 +1,0 @@
-%%% Zeros
-Speed 
-{sensor/actuator} 
-{sensor/twist actuator} 
-{twist sensor/actuator} 
-{twist sensor/twist actuator} 
