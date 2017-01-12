@@ -1,0 +1,9 @@
+1 time
+2-4 xyz ref frame
+5-8 Euler params ref frame
+9-11 acc ref rame
+12-14 ang_acc ref frame
+15 local vx ref frame
+16 omega z ref frame
+17 steer angle
+18
