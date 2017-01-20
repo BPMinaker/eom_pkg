@@ -98,13 +98,15 @@ for i=1:length(in) %% For each item
 	end
 end
 
-if(ismember(type,{'triangle_3','triangle_5'}))
+if(ismember(type,{'triangle_3s','triangle_5s'}))
 	for i=1:length(in)
 		in(i).mod_mtx=in(i).modulus/(1-in(i).psn_ratio^2)*[1 in(i).psn_ratio 0; in(i).psn_ratio 1 0; 0 0 0.5-in(i).psn_ratio/2];
 	end
 end
 
-if(ismember(type,{'wing','surf'}))
+type
+
+if(ismember(type,{'wings','surfs'}))
 	for i=1:length(in)
 		if(in(i).area==0)
 			in(i).area=in(i).span*in(i).chord;
