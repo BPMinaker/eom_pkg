@@ -104,8 +104,6 @@ if(ismember(type,{'triangle_3s','triangle_5s'}))
 	end
 end
 
-type
-
 if(ismember(type,{'wings','surfs'}))
 	for i=1:length(in)
 		if(in(i).area==0)
