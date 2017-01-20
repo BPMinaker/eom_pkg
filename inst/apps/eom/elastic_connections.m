@@ -208,14 +208,6 @@ out.preload_vec=preload_vec;  %% The vector of known spring preloads
 end  %% Leave
 
 
-%  		temp=[
-%  		wing.cdu+2*wing.cd0/wing.airspeed (wing.cda-wing.cl0)/wing.airspeed 0; ...
-%  		wing.clu+2*wing.cl0/wing.airspeed (wing.cd0+wing.cla)/wing.airspeed 0; ...
-%  		wing.chord*[wing.cmu+2*wing.cm0/wing.airspeed wing.cma/wing.airspeed] wing.cmq ...
-%  		];
-
-
-
 %	flex_point_stiff=[]; %% Creates empty vector for the flex-point stiffnesses
 %	flex_point_dmpng=[]; %% Creates empty vector for the flex-point damping coefficients
 %		for j=1:data.flex_points(i).forces
