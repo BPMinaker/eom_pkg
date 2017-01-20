@@ -1,4 +1,4 @@
-function item=runAVL()
+function item=runAVL(velocity)
 
 %% Joseph Moster DEC 2011
 %% BP Minaker, 2016
@@ -13,14 +13,15 @@ function item=runAVL()
 %  allegro.mass
 
 %% INPUT variables
-filename = 'allegro';
-velocity = 10;%m/s
+filename = ['data' filesep() 'AVLdata' filesep() 'allegro'];
+
 %Define a base file name to save 
 basename = 'newData1';
 
 %% Directory Preparation
 %Purge Directory of interfering files
-delete([basename '.st'],[basename '.sb'],[basename '.run'],[basename '.eig']);
+%delete([basename '.st'],[basename '.sb'],[basename '.run'],[basename '.eig']);
+delete([basename '.sb'],[basename '.run']);
 
 %% Create run file
 %Open the file with write permission
@@ -54,8 +55,9 @@ fprintf(fid, '\n');
 fprintf(fid, '%s\n',   'x'); 
 
 %Save the st data
-fprintf(fid, '%s\n',   'st'); 
-fprintf(fid, '%s%s\n',basename,'.st');   
+%fprintf(fid, '%s\n',   'st'); 
+%fprintf(fid, '%s%s\n',basename,'.st');   
+
 %Save the sb data
 fprintf(fid, '%s\n',   'sb');
 fprintf(fid, '%s%s\n',basename,'.sb');
@@ -66,9 +68,10 @@ fprintf(fid, '%s\n',   '');
 %Switch to MODE menu
 fprintf(fid, '%s\n',   'MODE');
 fprintf(fid, '%s\n',   'n');
+
 %Save the eigenvalue data
-fprintf(fid, '%s\n',   'w');
-fprintf(fid, '%s%s\n', basename,'.eig');   %File to save to
+%fprintf(fid, '%s\n',   'w');
+%fprintf(fid, '%s%s\n', basename,'.eig');   %File to save to
 
 %Exit MODE Menu
 fprintf(fid, '\n');     
@@ -91,9 +94,7 @@ strs=textread('newData1.sb', '%s');
 props={'CXu' 'CXw' 'CXq' 'CYv' 'CYp' 'CYr' 'CZu' 'CZw' 'CZq' 'Clv' 'Clp' 'Clr' 'Cmu' 'Cmw' 'Cmq' 'Cnv' 'Cnp' 'Cnr'};
 
 for i=1:length(props)
-
 	ind=find(strcmp(strs,props{i}));
 	item.(lower(props{i}))=str2num(strs{ind+2});
-
 end
 
