@@ -58,8 +58,8 @@ for i=1:vpts
 
 		w_nat=abs(result{i}.math.val);  %% Find equiv. freq.
 		wlim=w_nat(w_nat>0);
-		maxw(i)=max(w_nat(isfinite(w_nat)));  %% Find max frequency for span of frequency analysis
-		minw(i)=min(wlim);  %% Find min non-zero frequency
+		%maxw(i)=max(w_nat(isfinite(w_nat)));  %% Find max frequency for span of frequency analysis
+		%minw(i)=min(wlim);  %% Find min non-zero frequency
 
 		result{i}.eom.modes=result{i}.eom.phys*result{i}.math.vect;  %% Convert vector to physical coordinates
 
@@ -82,53 +82,57 @@ for i=1:vpts
 
 		result{i}.math.zros=zrs(result{i}.math.ss_min);
 
-		temp=result{i}.math.zros;
-		temp=temp(temp>0);
-		temp=temp(temp<1e7);
-		
-		if(isempty(temp))
-			minz(i)=minw(i);
-			maxz(i)=maxw(i);
-		else
-			minz(i)=min(temp);
-			maxz(i)=max(temp);
-		end
+%		temp=result{i}.math.zros;
+%		temp=temp(temp>0);
+%		temp=temp(temp<1e7);
+
+%		if(isempty(temp))
+%			minz(i)=minw(i);
+%			maxz(i)=maxw(i);
+%		else
+%			minz(i)=min(temp);
+%			maxz(i)=max(temp);
+%		end
 	end
 end
 
-minw=min(minw);
-maxw=max(maxw);
-minz=min(minz);
-maxz=max(maxz);
+%minw=min(minw)
+%maxw=max(maxw)
+%minz=min(minz)
+%maxz=max(maxz)
 
-minw=round(log10(min([minw;minz])/2/pi))-1;
-maxw=round(log10(max([maxw;maxz])/2/pi))+1;
+%minw=round(log10(min([minw;minz])/2/pi))-1
+%maxw=round(log10(max([maxw;maxz])/2/pi))+1
 
-minw=max(minw,-2);
-maxw=max(minw,maxw);
+%minw=max(minw,-2)
+%maxw=max(minw,maxw)
 
-w=2*pi*logspace(minw,maxw,wpts);
+%w=2*pi*logspace(minw,maxw,wpts);
 
 %par
 for i=1:vpts
-	result{i}.math.w=w;
+%	result{i}.math.w=w;
 	n=size(result{i}.eom.state_space.a,1);
 	[nout,nin]=size(result{i}.eom.state_space.d);
 
 	result{i}.math.ss_resp=zeros(nout,nin);
 
 	if(nin*nout*n>0 && nin*nout<16)
-		result{i}.math.freq_resp=freqresp(result{i}.math.ss_min,result{i}.math.w)+eps;  %% add small offset to fix -Inf
+
 		if(exist('OCTAVE_VERSION','builtin'))
+			[fr,result{i}.math.w]=frdata(result{i}.math.ss_min);
+			result{i}.math.freq_resp=fr+eps;  %% add small offset to fix -Inf
 			for j=1:nout
 				for k=1:nin
 					result{i}.math.ss_resp(j,k)=dcgain(minreal(dss(result{i}.eom.state_space.a, result{i}.eom.state_space.b(:,k),result{i}.eom.state_space.c(j,:), result{i}.eom.state_space.d(j,k),result{i}.eom.state_space.e),1e-9));
 				end
 			end
 		else
+			[fr,result{i}.math.w]=freqresp(result{i}.math.ss_min);
+			result{i}.math.freq_resp=fr+eps;  %% add small offset to fix -Inf
 			result{i}.math.ss_resp=dcgain(result{i}.math.ss_min);  %% Find steady state gains
 		end
-		
+
 		result{i}.math.hankel_svd=hsvd(result{i}.eom.state_space);
 	else
 		result{i}.math.freq_resp=[];
