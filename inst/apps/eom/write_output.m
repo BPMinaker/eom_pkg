@@ -164,7 +164,7 @@ if(nin*nout>0  && nin*nout<16)
 			strs.sstf=[strs.sstf sprintf('%4.12e ',reshape(result{i}.math.ss_resp(:,:),1,nin*nout))];  %% Followed by first column, written as a row, then next column, as a row
 			strs.sstf=[strs.sstf '\n'];
 		end
-		length(result{i}.math.w)
+
 		for j=1:length(result{i}.math.w) %% Loop over frequency range
 
 			strs.bode=[strs.bode sprintf('%4.12e ',result{i}.math.w(j)/2/pi,option.vector(i))];  %% Each row starts with freq in Hz, then speed
