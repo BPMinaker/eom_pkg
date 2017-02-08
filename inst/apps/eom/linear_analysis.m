@@ -14,7 +14,7 @@ function result=linear_analysis(result)
 %%--------------------------------------------------------------------
 
 vpts=length(result);  %% Number of points to plot
-wpts=round(1000/vpts);
+%wpts=round(1000/vpts);
 
 %par
 for i=1:vpts
@@ -56,8 +56,8 @@ for i=1:vpts
 			end
 		end
 
-		w_nat=abs(result{i}.math.val);  %% Find equiv. freq.
-		wlim=w_nat(w_nat>0);
+		%w_nat=abs(result{i}.math.val);  %% Find equiv. freq.
+		%wlim=w_nat(w_nat>0);
 		%maxw(i)=max(w_nat(isfinite(w_nat)));  %% Find max frequency for span of frequency analysis
 		%minw(i)=min(wlim);  %% Find min non-zero frequency
 

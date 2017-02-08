@@ -14,7 +14,7 @@ function write_output(config,result,option,name)
 %%--------------------------------------------------------------------
 
 vpts=length(result);  %% Number of points to plot
-wpts=length(result{1}.math.w);
+%wpts=length(result{1}.math.w);
 
 cmplx=0; %% Creates variable for number of oscillatory modes
 dmpd=0; %% Creates variable for number of non-oscillatory modes
@@ -164,8 +164,9 @@ if(nin*nout>0  && nin*nout<16)
 			strs.sstf=[strs.sstf sprintf('%4.12e ',reshape(result{i}.math.ss_resp(:,:),1,nin*nout))];  %% Followed by first column, written as a row, then next column, as a row
 			strs.sstf=[strs.sstf '\n'];
 		end
-		
-		for j=1:wpts  %% Loop over frequency range
+		length(result{i}.math.w)
+		for j=1:length(result{i}.math.w) %% Loop over frequency range
+
 			strs.bode=[strs.bode sprintf('%4.12e ',result{i}.math.w(j)/2/pi,option.vector(i))];  %% Each row starts with freq in Hz, then speed
 			strs.bode=[strs.bode sprintf('%4.12e ',reshape(20*log10(abs(result{i}.math.freq_resp(:,:,j))),1,nin*nout))];  %% Followed by first mag column, written as a row, then next column, as a row
 			
