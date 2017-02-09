@@ -80,12 +80,11 @@ for i=1:result{1}.data.nlinks
 	frc=pload(1:3);
 	mmt=pload(4:6);
 	strs.preload=[strs.preload '{' num2str(j) '} {' item.name '}'];
-	if(~(norm(frc)==0 && norm(mmt)>0))
+	if(item.twist==0)
 		strs.preload=[strs.preload ' force'];
 		strs.preload=[strs.preload sprintf(' %4.8e',frc,mag) '\n'];
-	end
-	if(norm(mmt)>0)
-		strs.preload=[strs.preload '{} {} moment'];
+	else
+		strs.preload=[strs.preload ' moment'];
 		strs.preload=[strs.preload sprintf(' %4.8e',mmt,mag) '\n'];
 	end
 end
