@@ -14,7 +14,8 @@ function result=linear_analysis(result)
 %%--------------------------------------------------------------------
 
 vpts=length(result);  %% Number of points to plot
-%wpts=round(1000/vpts);
+wpts=round(1500/vpts);
+w=2*pi*logspace(-1,2,wpts);
 
 %par
 for i=1:vpts
@@ -115,21 +116,25 @@ for i=1:vpts
 	n=size(result{i}.eom.state_space.a,1);
 	[nout,nin]=size(result{i}.eom.state_space.d);
 
-	result{i}.math.ss_resp=zeros(nout,nin);
+%	result{i}.math.ss_resp=zeros(nout,nin);
 
 	if(nin*nout*n>0 && nin*nout<16)
 
+		result{i}.math.w=w;
+		result{i}.math.freq_resp=freqresp(result{i}.math.ss_min,w)+eps;  %% add small offset to fix -Inf
+
 		if(exist('OCTAVE_VERSION','builtin'))
-			[fr,result{i}.math.w]=frdata(result{i}.math.ss_min);
-			result{i}.math.freq_resp=fr+eps;  %% add small offset to fix -Inf
+%			[fr,result{i}.math.w]=frdata(result{i}.math.ss_min);
+%			result{i}.math.freq_resp=fr+eps;  %% add small offset to fix -Inf
+
 			for j=1:nout
 				for k=1:nin
 					result{i}.math.ss_resp(j,k)=dcgain(minreal(dss(result{i}.eom.state_space.a, result{i}.eom.state_space.b(:,k),result{i}.eom.state_space.c(j,:), result{i}.eom.state_space.d(j,k),result{i}.eom.state_space.e),1e-9));
 				end
 			end
 		else
-			[fr,result{i}.math.w]=freqresp(result{i}.math.ss_min);
-			result{i}.math.freq_resp=fr+eps;  %% add small offset to fix -Inf
+%			[fr,result{i}.math.w]=freqresp(result{i}.math.ss_min);
+%			result{i}.math.freq_resp=fr+eps;  %% add small offset to fix -Inf
 			result{i}.math.ss_resp=dcgain(result{i}.math.ss_min);  %% Find steady state gains
 		end
 
