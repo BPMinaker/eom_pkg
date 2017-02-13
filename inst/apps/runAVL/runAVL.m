@@ -31,8 +31,8 @@ fid=fopen([basename '.run'],'w');
 fprintf(fid, 'LOAD %s\n',[filename '.avl']);
 
 %Load mass parameters
-fprintf(fid, 'MASS %s\n',[filename,'.mass']);
-fprintf(fid, 'MSET\n');
+%fprintf(fid, 'MASS %s\n',[filename,'.mass']);
+%fprintf(fid, 'MSET\n');
 %Change this parameter to set which run cases to apply 
 fprintf(fid, '%i\n',   0); 
 
