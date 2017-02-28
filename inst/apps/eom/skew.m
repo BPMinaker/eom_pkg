@@ -15,16 +15,6 @@ function mtx=skew(vct)
 
 %% This function forms the skew symmetric matrix for the vector argument
 
+	mtx=[0 -vct(3) vct(2); vct(3) 0 -vct(1); -vct(2) vct(1) 0];
 
-%	mtx=zeros(3);
-%	mtx(1,2)=-vct(3);
-%	mtx(1,3)=vct(2);
-%	mtx(2,3)=-vct(1);
-
-%	mtx(2,1)=vct(3);
-%	mtx(3,1)=-vct(2);
-%	mtx(3,2)=vct(1);
-
-    mtx=[0 -vct(3) vct(2); vct(3) 0 -vct(1); -vct(2) vct(1) 0];
-     
 end  %% Leave
