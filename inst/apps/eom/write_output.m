@@ -41,8 +41,8 @@ strs.eigen=['%%%%%% Eigenvalues\n' ...
 strs.freq=['%%%%%% Natural Frequency\n' ...
 	'num speed nfreq zeta tau lambda \n'];
 strs.mode=['%%%%%% Modes '  num2str(1:n) '\n'];
-strs.centre=['%%%%%% Speed, Mode, Body, Rotation centre, Axis of rotation\n' ...
-	'speed num name rx rxi ry ryi rz rzi ux uxi uy uyi uz uzi\n'];
+strs.centre=['%%%%%% Mode, Speed, Body, Rotation centre, Axis of rotation\n' ...
+	'num speed name rx rxi ry ryi rz rzi ux uxi uy uyi uz uzi\n'];
 
 strs.bode=['%%%%%% Bode Mag Phase \n' ...
 	'frequency speed '];
@@ -101,7 +101,7 @@ for i=1:vpts
 		elseif (realpt<0)
 			dmpd=dmpd+counter;
 		end
-			
+
 		strs.eigen=[strs.eigen '{' num2str(j) '}'];  %% Write the number
 		strs.eigen=[strs.eigen sprintf(' %4.12e',option.vector(i),realpt,imagpt,realpt/2/pi,imagpt/2/pi) '\n'];  %% Write the speed, then the eigenvalue
 		strs.freq=[strs.freq '{' num2str(j) '}'];
@@ -109,11 +109,12 @@ for i=1:vpts
 	end
 	strs.eigen=[strs.eigen '\n'];
 	strs.freq=[strs.freq  '\n'];
+
 	for j=1:length(result{i}.math.val)
 		for k=1:(result{1}.data.nbodys-1)
-			strs.centre=[strs.centre sprintf('%4.12e ',option.vector(i))];
-			strs.centre=[strs.centre num2str(j) ' '];
-			strs.centre=[strs.centre result{i}.data.bodys(k).name];
+			strs.centre=[strs.centre '{' num2str(j) '}'];
+			strs.centre=[strs.centre sprintf(' %4.12e ',option.vector(i))];
+			strs.centre=[strs.centre '{' result{i}.data.bodys(k).name '}'];
 			for m=1:3
 				strs.centre=[strs.centre sprintf(' %4.12e', real(result{i}.centres(3*k+m-3,j)),imag(result{i}.centres(3*k+m-3,j)))];
 			end
@@ -122,7 +123,6 @@ for i=1:vpts
 			end
 			strs.centre=[strs.centre '\n'];
 		end
-		strs.centre=[strs.centre '\n'];
 	end
 	strs.centre=[strs.centre '\n'];
 
@@ -169,9 +169,7 @@ if(nin*nout>0  && nin*nout<16)
 
 			strs.bode=[strs.bode sprintf('%4.12e ',result{i}.math.w(j)/2/pi,option.vector(i))];  %% Each row starts with freq in Hz, then speed
 			strs.bode=[strs.bode sprintf('%4.12e ',reshape(20*log10(abs(result{i}.math.freq_resp(:,:,j))),1,nin*nout))];  %% Followed by first mag column, written as a row, then next column, as a row
-			
 			strs.bode=[strs.bode sprintf('%4.12e ',reshape(180/pi*phs(:,:,j),1,nin*nout))];  %% Followed by first phase column, written as a row, then next column, as a row
-
 			strs.bode=[strs.bode '\n'];
 		end
 		strs.bode=[strs.bode '\n'];

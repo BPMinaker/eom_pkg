@@ -60,7 +60,7 @@ for i=1:length(the_system.item) %% Loop over items in system
 		end
 
 		if(~isfield(the_system.item{i},'type'))  % Make sure the item type is defined
-			error('Found an item with no type defined in the input file!');
+			error(['Found an item (' the_system.item{i}.name ') with no type defined in the input file!']);
 		elseif(~isfield(default,the_system.item{i}.type))  %% Make sure the type is recognized
 			disp(the_system.item{i}.type)
 			error('Found an item of unrecognized type in the input file!');

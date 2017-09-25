@@ -16,22 +16,12 @@ function [eqn_of_mtn,state_space,phys]=assemble_eom(syst,verb)
 %% Build angular stiffness matrix from motion of items with preload, both rigid and flexible
 if(verb); disp('Building equations of motion...'); end
 
-k_geo=line_stretch_hessian(syst.data.links,syst.data.nbodys);
-k_geo=k_geo+line_stretch_hessian(syst.data.springs,syst.data.nbodys);
-
-k_geo=k_geo+point_hessian(syst.data.flex_points,syst.data.nbodys);
-k_geo=k_geo+point_hessian(syst.data.rigid_points,syst.data.nbodys);
-
-stiff_mtx=syst.eom.frc.k_app_frc+k_geo+syst.eom.elastic.k_defln;  %% Sum total system stiffness
-
-%symmetric_stiffness=issymmetric(stiff_mtx,1.e-3);  %% Check symmetry of stiffness matrix, if 'stiff_mtx' is symmetric to the tolerance 1.e-3, return the dimension, otherwise return zero
-
 dim=syst.data.dimension;
 
 M=[eye(dim) zeros(dim,dim+syst.data.nin); zeros(dim) syst.eom.mass.mtx+syst.eom.elastic.inertia_mtx -syst.eom.forced.g_mtx; zeros(syst.data.nin,2*dim+syst.data.nin)];
 
 KC=[syst.eom.rigid.v_mtx -eye(dim) zeros(dim,syst.data.nin);
-stiff_mtx syst.eom.elastic.dmpng_mtx+syst.eom.rigid.mv_mtx -syst.eom.forced.f_mtx; 
+syst.eom.tangent.k_geo+syst.eom.frc.k_app_frc+syst.eom.elastic.k_defln syst.eom.elastic.dmpng_mtx+syst.eom.rigid.mv_mtx -syst.eom.forced.f_mtx; 
 zeros(syst.data.nin,2*dim) eye(syst.data.nin)];
 
 s=size(syst.eom.rigid.J_r,1);  %% Compute size of J matrices
@@ -84,6 +74,12 @@ end
 C=C*r_orth;
 D=syst.eom.outputs.d_mtx;  %% Add the user defined feed forward
 
+%%%%%%%%%%%%%%%%%%%%% temp %%%%%%%%%%%
+
+%A=A-B*1000*eye(2)*C;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 state_space=dss(A,B,C,D,E);
 phys=r_orth(1:dim,:);  %% Relate the physical coordinates to the minimal ones
 
@@ -91,8 +87,8 @@ if(verb); disp('Okay, built equations of motion.'); end
 
 eqn_of_mtn.M=M;
 eqn_of_mtn.KC=KC;
-eqn_of_mtn.stiff_mtx=stiff_mtx;
-eqn_of_mtn.k_geo=k_geo;
+eqn_of_mtn.stiff_mtx=syst.eom.tangent.k_geo+syst.eom.frc.k_app_frc+syst.eom.elastic.k_defln;
+%eqn_of_mtn.k_geo=k_geo;
 
 end  %% Leave
 

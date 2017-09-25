@@ -21,9 +21,11 @@ for k=1:length(out_data)
 	tmp=result{1}.eom.(out_data_path{k}).(out_data{k});
 	[m,n]=size(tmp);  %% Get size of matrix
 	if(m>6||n>6)  %% If it's too big
-		mm=max(max(abs(tmp)));
-		val=tmp(abs(tmp)>1e-6*mm);
-		[i,j]=find(abs(tmp)>1e-6*mm);
+%		mm=max(max(abs(tmp)));
+%		val=tmp(abs(tmp)>1e-6*mm);
+%		[i,j]=find(abs(tmp)>1e-6*mm);
+		val=tmp(abs(tmp)>0);
+		[i,j]=find(abs(tmp)>0);
 		if(isempty(val))
 			i=1;
 			j=1;

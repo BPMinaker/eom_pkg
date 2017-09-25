@@ -30,11 +30,15 @@ for i=1:nc  %% For each vector
 		rots=rots*exp(sqrt(-1)*-phi);
 		
 		rad=pinv(skew(rots))*trans; %% Radius to the instantaneous center of rotation of the body (rad=omega\v)
-%		rad=1e-5*round(rad/1e-5);  %% Round off to allow checks
 		centre(3*j+(-2:0),i)=1e-5*round((bodys(j).location-rad)*1e5);
 
 		axis(3*j+(-2:0),i)=rots/(norm(rots)+eps);
 		axis=1e-5*round(axis/1e-5);  %% Round off to allow checks
+
+	end
+end
+
+end  %% Leave
 
 
 %		if(norm(imag(rad(:,j)))>1e-4)
@@ -52,10 +56,4 @@ for i=1:nc  %% For each vector
 %		if(flag)
 %			disp('Warning: discarding imaginary centre of rotation - likely pure translation.');
 %		end
-	end
-end
 
-end  %% Leave
-
-%		s1=[s1 vrml_cyl([syst.data.bodys(j).location-rad(:,j)-w,syst.data.bodys(j).location-rad(:,j)+w],'rad',0.005,'tran',0.5)];
-%		s1=[s1 vrml_cyl([syst.data.bodys(j).location-rad(:,j)-w,syst.data.bodys(j).location-rad(:,j)+w],'rad',0.005,'tran',0.5)];

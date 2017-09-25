@@ -29,6 +29,7 @@ for i=1:vpts
 
 	if(n>0)  %% If it's possible, do eigenvalues
 		[vec_tmp,val_tmp]=eig(result{i}.eom.state_space.a,result{i}.eom.state_space.e);  %% Find the eigen for this speed
+
 		val_tmp=diag(val_tmp);
 
 		result{i}.math.val=val_tmp(isfinite(val_tmp));  %% Discard modes with Inf or Nan vals
@@ -38,6 +39,7 @@ for i=1:vpts
 		vec=1e-6*round(result{i}.math.vect(1:m,:)*1e6);
 
 		if(vpts<10)
+			%cond(vec_tmp)
 			r=rank(vec);
 			if(r<m)
 				disp('Vectors are not unique!');
