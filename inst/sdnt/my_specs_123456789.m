@@ -18,6 +18,8 @@ params.fbf=0.65; % front brake fraction, from 0 to 1, 0 being rear brakes only, 
 
 % vehicle chassis model
 params.eom_model='full_car_a_arm_pushrod';
+%params.eom_model='full_car_strut_trailing';
+
 
 % driver model
 params.acc_lat_max=0.4; % [g's] maximum lateral acceleration, used to compute max speed in the corner, adjusted automatically if vehicle path tracking is poor

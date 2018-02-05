@@ -178,7 +178,7 @@ figure
 plot(t,extra(:,9:12));
 title('Combined slip vs time');
 xlabel('Time [s]');
-ylabel('Angle [rad]');
+ylabel('Unitless');
 axis([0 tf 0 1]);
 
 figure

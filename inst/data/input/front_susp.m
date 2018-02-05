@@ -24,6 +24,7 @@ item.mass=5;
 item.momentsofinertia=[0.1;0.1;0.1];
 item.productsofinertia=[0;0;0];
 item.location=[1.2;0.8;0.3];
+item.velocity=velocity;
 the_system.item{end+1}=item;
 the_system.item{end+1}=weight(item,g);
 

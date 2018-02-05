@@ -41,8 +41,8 @@ the_system.item{end+1}=weight(item,g);
 
 item={};
 
-the_system=front_susp(the_system,0,g);
-the_system=rear_susp(the_system,0,g);
+the_system=front_susp(the_system,u,g);
+the_system=rear_susp(the_system,u,g);
 
 item.type='spring';
 item.name='Anti-roll bar';

@@ -142,7 +142,7 @@ item.location2=[0;0.1;0];
 item.twist=0;
 item.order=3;
 item.frame=1;
-item.gain=1;
+item.gain=1/9.81;
 the_system.item{end+1}=item;
 
 

@@ -18,15 +18,18 @@ the_system.item={};
 
 %% A bounce pitch model that should match the example from the notes.  No damping by default, but can be easily added
 %% Note tire and suspension properties are for both left and right sides summed
-params.a=1.4;
-params.b=1.7;
+params.a=1.189;
+params.b=2.885-1.189;
 params.kf=35000;
 params.kr=38000;
 params.kt=300000;
 params.cf=1000;
-params.cr=800;
-params.m=1500;
-params.I=2160;
+params.cr=1200;
+params.m=16975/9.81;
+params.I=3267;
+params.muf=50;
+params.mur=50;
+
 
 if(nargin()==2)  %% Are there two arguments?
 	if(isa(varargin{1},'struct'))  %% If so, is the second a struct?
@@ -53,14 +56,16 @@ the_system.item{end+1}=weight(body);
 
 
 body.name='front unsprung';
-body.mass=50;
+body.mass=params.muf;
+body.momentsofinertia=[0;0;0];
 body.location=[params.a;0;0.1];
 the_system.item{end+1}=body;
 the_system.item{end+1}=weight(body);
 
 
 body.name='rear unsprung';
-body.mass=40;
+body.mass=params.mur;
+body.momentsofinertia=[0;0;0];
 body.location=[-params.b;0;0.1];
 the_system.item{end+1}=body;
 the_system.item{end+1}=weight(body);

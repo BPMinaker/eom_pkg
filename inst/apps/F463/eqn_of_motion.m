@@ -2,7 +2,7 @@ function zdot=eqn_of_motion(t,z,flag)
 
 global params;
 
-%t
+t
 params.ncalls=params.ncalls+1;  %% Record number of function calls
 %pause()
 % 

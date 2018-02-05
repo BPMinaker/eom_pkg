@@ -15,7 +15,7 @@ function result=linear_analysis(result)
 
 vpts=length(result);  %% Number of points to plot
 wpts=round(1500/vpts);
-w=2*pi*logspace(-1,2,wpts);
+%w=2*pi*logspace(-1,2,wpts);
 
 %par
 for i=1:vpts
@@ -59,10 +59,10 @@ for i=1:vpts
 			end
 		end
 
-		%w_nat=abs(result{i}.math.val);  %% Find equiv. freq.
-		%wlim=w_nat(w_nat>0);
-		%maxw(i)=max(w_nat(isfinite(w_nat)));  %% Find max frequency for span of frequency analysis
-		%minw(i)=min(wlim);  %% Find min non-zero frequency
+		w_nat=abs(result{i}.math.val);  %% Find equiv. freq.
+		wlim=w_nat(w_nat>0);
+		maxw(i)=max(w_nat(isfinite(w_nat)));  %% Find max frequency for span of frequency analysis
+		minw(i)=min(wlim);  %% Find min non-zero frequency
 
 		result{i}.eom.modes=result{i}.eom.phys*result{i}.math.vect;  %% Convert vector to physical coordinates
 
@@ -99,18 +99,13 @@ for i=1:vpts
 	end
 end
 
-%minw=min(minw)
-%maxw=max(maxw)
-%minz=min(minz)
-%maxz=max(maxz)
+minw=floor(log10(min(minw)/2/pi));
+if(minw<-2)
+	minw=-2;
+end
+maxw=ceil(log10(max(maxw)/2/pi));
 
-%minw=round(log10(min([minw;minz])/2/pi))-1
-%maxw=round(log10(max([maxw;maxz])/2/pi))+1
-
-%minw=max(minw,-2)
-%maxw=max(minw,maxw)
-
-%w=2*pi*logspace(minw,maxw,wpts);
+w=2*pi*logspace(minw,maxw,wpts);
 
 %par
 for i=1:vpts
