@@ -1,0 +1,161 @@
+\chapter{Equations of Motion}
+The equations of motion are of the form
+\[
+\begin{bmatrix}
+{\mathbf I} & {\bm 0} & {\bm 0} \\ {\bm 0} & {\mathbf M} & -{\mathbf G} \\ {\bm 0} & {\bm 0} & {\bm 0}
+\end{bmatrix}
+\begin{Bmatrix}
+\dot{\bm p}\\ \dot{\bm w} \\ \dot{\bm u}
+\end{Bmatrix}
++\begin{bmatrix}
+{\mathbf V} & -{\mathbf I} & {\bm 0} \\ {\mathbf K} & {\mathbf L} & -{\mathbf F} \\ {\bm 0} & {\bm 0} & {\mathbf I}
+\end{bmatrix}
+\begin{Bmatrix}
+{\bm p}\\ {\bm w}\\ {\bm u}
+\end{Bmatrix}
+=\begin{bmatrix}
+{\bm 0}\\ {\bm 0}\\ {\mathbf I}
+\end{bmatrix}
+\begin{Bmatrix}
+{\bm u}
+\end{Bmatrix}
+\]
+The system is subject to constraints
+\[
+\begin{bmatrix}
+\mathbf{J}_\textrm{h} & {\bm 0} & {\bm 0}\\-{\mathbf J}_\textrm{h}{\mathbf V} & {\mathbf J}_\textrm{h} & {\bm 0}\\ {\bm 0} & {\mathbf J}_\textrm{nh} & {\bm 0}
+\end{bmatrix}
+\begin{bmatrix}
+\dot{\bm p} & {\bm p} \\ \dot{\bm w} & {\bm w} \\ \dot{\bm u} & {\bm u}
+\end{bmatrix}
+=\begin{bmatrix}
+{\bm 0} & {\bm 0}\\{\bm 0} & {\bm 0}\\{\bm 0} & {\bm 0}
+\end{bmatrix}
+\]
+\noindent The full state space equations:
+\[
+\begin{bmatrix}
+{\mathbf E} & {\bm 0} \\ {\bm 0} & {\mathbf I}
+\end{bmatrix}
+\begin{Bmatrix}
+\dot{\bm x}\\ {\bm y}
+\end{Bmatrix}
+=\begin{bmatrix}
+\mathbf{A} & \mathbf{B} \\ \mathbf{C} & \mathbf{D}
+\end{bmatrix}
+\begin{Bmatrix}
+{\bm x}\\ {\bm u}\end{Bmatrix}
+\]
+\pgfplotstabletypeset[
+every head row/.style={output empty row},
+every last row/.style={after row={}},
+every row no 18/.style={after row=\midrule},
+columns/0/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/1/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/2/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/3/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/4/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/5/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/6/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/7/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/8/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/9/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/10/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/11/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/12/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/13/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/14/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/15/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/16/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/17/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/18/.style={sci,sci zerofill,precision=8,dec sep align,column type/.add={}{|}},
+columns/19/.style={sci,sci zerofill,precision=8,dec sep align},
+write to macro=\ABCD,
+typeset=false]
+{unformatted/ABCD.out}
+\pgfplotstabletypeset[
+every head row/.style={output empty row},
+every last row/.style={after row={}},
+columns/0/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/1/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/2/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/3/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/4/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/5/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/6/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/7/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/8/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/9/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/10/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/11/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/12/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/13/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/14/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/15/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/16/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/17/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/18/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/19/.style={sci,sci zerofill,precision=8,dec sep align},
+write to macro=\E,
+typeset=false]
+{unformatted/E.out}
+\begin{tiny}
+\[
+\begin{bmatrix}
+{\mathbf A} & {\mathbf B} \\ {\mathbf C} & {\mathbf D}
+\end{bmatrix}=
+\left[
+\ABCD
+\right]
+\]
+\[
+{\mathbf E}=
+\left[
+\E
+\right]
+\]
+\end{tiny}
+\noindent The reduced state space equations:
+\[
+\begin{Bmatrix}
+\dot{\bm x}\\ {\bm y}
+\end{Bmatrix}
+=\begin{bmatrix}
+\mathbf{A} & \mathbf{B} \\ \mathbf{C} & \mathbf{D}
+\end{bmatrix}
+\begin{Bmatrix}
+{\bm x}\\ {\bm u}\end{Bmatrix}
+\]
+\pgfplotstabletypeset[
+every head row/.style={output empty row},
+every last row/.style={after row={}},
+every row no 14/.style={after row=\midrule},
+columns/0/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/1/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/2/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/3/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/4/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/5/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/6/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/7/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/8/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/9/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/10/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/11/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/12/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/13/.style={sci,sci zerofill,precision=8,dec sep align},
+columns/14/.style={sci,sci zerofill,precision=8,dec sep align,column type/.add={}{|}},
+columns/15/.style={sci,sci zerofill,precision=8,dec sep align},
+write to macro=\ABCD,
+typeset=false]
+{unformatted/ABCDmin.out}
+\begin{tiny}
+\[
+\begin{bmatrix}
+{\mathbf A} & {\mathbf B} \\ {\mathbf C} & {\mathbf D}
+\end{bmatrix}=
+\left[
+\ABCD
+\right]
+\]
+\end{tiny}

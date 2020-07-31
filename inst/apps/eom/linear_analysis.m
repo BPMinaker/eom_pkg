@@ -60,7 +60,7 @@ for i=1:vpts
 		end
 
 		w_nat=abs(result{i}.math.val);  %% Find equiv. freq.
-		wlim=w_nat(w_nat>0);
+		wlim=w_nat(w_nat>1e-6);
 		maxw(i)=max(w_nat(isfinite(w_nat)));  %% Find max frequency for span of frequency analysis
 		minw(i)=min(wlim);  %% Find min non-zero frequency
 
@@ -99,11 +99,11 @@ for i=1:vpts
 	end
 end
 
-minw=floor(log10(min(minw)/2/pi));
+minw=floor(log10(0.8*min(minw)/2/pi));
 if(minw<-2)
 	minw=-2;
 end
-maxw=ceil(log10(max(maxw)/2/pi));
+maxw=ceil(log10(1.25*max(maxw)/2/pi));
 
 w=2*pi*logspace(minw,maxw,wpts);
 

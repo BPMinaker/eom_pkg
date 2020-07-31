@@ -27,14 +27,10 @@ for i=1:result{1}.data.nrigid_points
 	frc=pload(1:3);
 	mmt=pload(4:6);
 	strs.preload=[strs.preload '{' num2str(j) '} {' item.name '}'];
-	if(~(norm(frc)==0 && norm(mmt)>0))
-		strs.preload=[strs.preload ' force'];
-		strs.preload=[strs.preload sprintf(' %4.8e',frc,norm(frc)) '\n'];
-	end
-	if(norm(mmt)>0)
-		strs.preload=[strs.preload '{} {} moment'];
-		strs.preload=[strs.preload sprintf(' %4.8e',mmt,norm(mmt)) '\n'];
-	end
+	strs.preload=[strs.preload ' force'];
+	strs.preload=[strs.preload sprintf(' %4.8e',frc,norm(frc)) '\n'];
+	strs.preload=[strs.preload '{} {} moment'];
+	strs.preload=[strs.preload sprintf(' %4.8e',mmt,norm(mmt)) '\n'];
 end
 
 for i=1:result{1}.data.nflex_points
@@ -44,14 +40,10 @@ for i=1:result{1}.data.nflex_points
 	frc=pload(1:3);
 	mmt=pload(4:6);
 	strs.preload=[strs.preload '{' num2str(j) '} {' item.name '}'];
-	if(~(norm(frc)==0 && norm(mmt)>0))
-		strs.preload=[strs.preload ' force'];
-		strs.preload=[strs.preload sprintf(' %4.8e',frc,norm(frc)) '\n'];
-	end
-	if(norm(mmt)>0)
-		strs.preload=[strs.preload '{} {} moment'];
-		strs.preload=[strs.preload sprintf(' %4.8e',mmt,norm(mmt)) '\n'];
-	end
+	strs.preload=[strs.preload ' force'];
+	strs.preload=[strs.preload sprintf(' %4.8e',frc,norm(frc)) '\n'];
+	strs.preload=[strs.preload '{} {} moment'];
+	strs.preload=[strs.preload sprintf(' %4.8e',mmt,norm(mmt)) '\n'];
 end
 
 for i=1:result{1}.data.nsprings
@@ -119,3 +111,16 @@ for i=1:result{1}.data.nbodys-1
 	strs.defln=[strs.defln '{ } { }' ' rotation' sprintf(' %4.8e',rnd*round(result{1}.eom.preloads.defln(6*i+(-2:0))/rnd)) '\n']; 
 	
 end
+
+
+
+%	if(~(norm(frc)==0 && norm(mmt)>0))
+%		strs.preload=[strs.preload ' force'];
+%		strs.preload=[strs.preload sprintf(' %4.8e',frc,norm(frc)) '\n'];
+%	end
+%	if(norm(mmt)>0)
+%		strs.preload=[strs.preload '{} {} moment'];
+%		strs.preload=[strs.preload sprintf(' %4.8e',mmt,norm(mmt)) '\n'];
+%	end
+
+

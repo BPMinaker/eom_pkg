@@ -232,19 +232,6 @@ item.axis=[0;0;1];
 the_system.item{end+1}=item;
 item={};
 
-% Only necessary for finding the roll centre
-%  item.forces=2;
-%  item.moments=0;
-%  item.axis=[0;1;0];
-%  %the_system.item{end+1}=item;
-%  
-%  item.forces=0;
-%  item.moments=2;
-%  item.axis=[1;0;0];
-%  %the_system.item{end+1}=item;
-%  
-%  item={};
-
 item.type='spring';
 item.name='Suspension spring';
 item.location1=[0.0;0.3;0.5];
@@ -257,7 +244,6 @@ the_system.item{end+1}=item;
 item={};
 
 item.type='flex_point';
-%item.type='rigid_point';  % only for finding roll centre
 item.name='Tire, vertical';
 item.body1='Wheel+hub';
 item.body2='ground';
@@ -271,7 +257,6 @@ the_system.item{end+1}=item;
 item={};
 
 item.type='flex_point';
-%item.type='rigid_point';  % only for finding roll centre
 item.name='Tire, horizontal';
 item.body1='Wheel+hub';
 item.body2='ground';
@@ -284,17 +269,8 @@ item.axis=[0;0;1];
 the_system.item{end+1}=item;
 item={};
 
-item.type='load';
-item.name='Inertia load';
-item.body='Wheel+hub';
-item.location=[0.5;0.9;0];
-item.force=[0;-0.5*9.81*250;0];
-item.moment=[0;0;0];
-%the_system.item{end+1}=item; % to add lateral loads at the tire
-item={};
-
 item.type='actuator';
-item.name='wheel actuator';
+item.name='$z_0$';
 item.location1=[0.5;0.9;0];
 item.location2=[0.5;0.9;-0.1];
 item.body1='Wheel+hub';
@@ -305,11 +281,26 @@ the_system.item{end+1}=item;
 item={};
 
 item.type='sensor';
-item.name='chassis sensor';
-item.location1=[0.5;0;0.3];
-item.location2=[0.5;0;0.2];
+item.name='$z_1$';
+item.location1=[0.5;0.9;0.3];
+item.location2=[0.5;0.9;0.2];
 item.body1='Chassis';
 item.body2='ground';
 the_system.item{end+1}=item;
-item={};
+
+item.name='$z_1-z_2$';
+item.body1='Chassis';
+item.body2='Wheel+hub';
+item.location1=[0.5;0.9;0.3];
+item.location2=[0.5;0.9;0.4];
+item.order=1;
+the_system.item{end+1}=item;
+
+item.name='$z_2-z_0$';
+item.body1='Wheel+hub';
+item.body2='ground';
+item.actuator='$z_0$';
+item.location1=[0.5;0.9;0.3];
+item.location2=[0.5;0.9;0];
+the_system.item{end+1}=item;
 

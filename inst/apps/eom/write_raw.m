@@ -78,7 +78,7 @@ fprintf(file,str);
 fclose(file);
 
 str='';
-temp=[result{1}.math.ss_min.a result{1}.math.ss_min.b; result{1}.math.ss_min.c result{1}.math.ss_min.d];
+temp=[round(1e12*result{1}.math.ss_min.a)*1e-12 round(1e12*result{1}.math.ss_min.b)*1e-12; round(1e12*result{1}.math.ss_min.c)*1e-12 round(1e12*result{1}.math.ss_min.d)*1e-12];
 [m,n]=size(temp);  %% Get size of matrix
 
 for i=1:m

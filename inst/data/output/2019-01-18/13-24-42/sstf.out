@@ -1,0 +1,5 @@
+%%% Steady State Transfer Function
+num outputtoinput gain
+{1} {Pitch angle/Front brake} 6.848000000000e-05
+{2} {Long accln/Front brake} -1.317550000000e-03
+{3} {Bump/Front brake} -1.330442000000e-02

@@ -1,0 +1,9 @@
+%%% Connection Data 
+num name stiffness damping t_stiffness t_damping
+{1} {Front tire, lateral} 0.00000000e+00 6.66666667e+02 0.00000000e+00 0.00000000e+00
+{2} {Rear tire, lateral} 0.00000000e+00 6.66666667e+02 0.00000000e+00 0.00000000e+00
+{3} {Front tire, longitudinal} 0.00000000e+00 2.00000000e+03 0.00000000e+00 0.00000000e+00
+{4} {Rear tire, longitudinal} 0.00000000e+00 2.00000000e+03 0.00000000e+00 0.00000000e+00
+{1} {Rear spring} 5.85700000e+04 1.16500000e+04 {} {}
+{2} {Right front spring} 1.49700000e+04 1.27800000e+03 {} {}
+{3} {Left front spring} 1.49700000e+04 1.27800000e+03 {} {}

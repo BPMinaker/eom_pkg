@@ -80,6 +80,7 @@ item.body2='ground';
 item.location1=[0.05;0;1];
 item.location2=[0.05;0;0];
 item.travel=0.25;
+item.gain=params.k;
 the_system.item{end+1}=item;
 item={};
 

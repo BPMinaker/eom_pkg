@@ -56,7 +56,7 @@ item.location=[b;0;0];
 item.forces=1;
 item.moments=0;
 item.axis=[0;1;0];
-item.stiffness=k;
+item.stiffness=[k,0];
 the_system.item{end+1}=item;
 item={};
 
@@ -93,7 +93,7 @@ item.location=[0;0;0];
 item.forces=1;
 item.moments=0;
 item.axis=[1;0;0];
-the_system.item{end+1}=item;
+%the_system.item{end+1}=item;
 item={};
 
 %% Add an actuator and sensor in the lateral direction

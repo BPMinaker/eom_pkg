@@ -1,0 +1,17 @@
+LOAD data/AVLdata/allegro.avl
+0
+PLOP
+g
+
+OPER
+c1
+v 10.0000
+
+x
+sb
+newData1.sb
+
+MODE
+n
+
+Quit

@@ -20,8 +20,8 @@ the_system.item={};
 
 params.a=1.189;
 params.b=2.885-1.189;
-params.kf=35000;
-params.kr=38000;
+params.kf=35000/2;
+params.kr=38000/2;
 params.kfb=3000;
 params.krb=1000;
 params.cf=1000;
